@@ -1,0 +1,183 @@
+/* ==========================================================
+   Episode page template. Shared by every episode.
+   ========================================================== */
+
+/* ---------- Opener ---------- */
+
+.opener {
+  padding: clamp(100px, 16vh, 140px) var(--gutter) clamp(64px, 10vh, 110px);
+}
+.opener-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
+  gap: clamp(36px, 5vw, 72px);
+  align-items: end;
+}
+.opener-copy { display: flex; flex-direction: column; gap: 26px; }
+.meta-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.chip-acc {
+  white-space: nowrap; background: var(--acc); color: var(--onacc);
+  padding: 6px 10px; border-radius: 999px;
+}
+.ep-title {
+  margin: 0; font-weight: 800;
+  font-size: clamp(76px, 12vw, 190px); line-height: .82; letter-spacing: -.055em;
+}
+.ep-title .it { letter-spacing: -.03em; color: var(--acc); }
+.opener .narrator { max-width: 30ch; }
+.credits { margin: 0; font-size: 16px; line-height: 1.55; color: var(--mute); }
+.credits strong { color: var(--ink); font-weight: 600; }
+
+.key-art-wrap { position: relative; }
+.key-art {
+  aspect-ratio: 4 / 5; border-radius: 6px; overflow: hidden;
+  background: #15140f; will-change: transform;
+}
+.key-art img {
+  width: 100%; height: 100%; object-fit: cover; object-position: 48% 60%;
+}
+.sticker {
+  position: absolute; left: -12px; bottom: 28px; transform: rotate(-6deg);
+  background: var(--pop); color: #16150f;
+  font-weight: 800; font-size: 15px; padding: 9px 16px; border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* ---------- Guest stars ---------- */
+
+.cast { padding: 0 var(--gutter) clamp(88px, 14vh, 150px); }
+.cast-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: clamp(20px, 3vw, 36px);
+}
+.cast-card { display: flex; flex-direction: column; gap: 14px; }
+.cast-card img {
+  width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 6px;
+}
+.cast-card h3 {
+  margin: 0; font-weight: 800; font-size: 30px; letter-spacing: -.03em; line-height: 1;
+}
+.cast-card p {
+  margin: 0; font-family: var(--serif); font-size: 18px; line-height: 1.5;
+  color: var(--mute); text-wrap: pretty;
+}
+
+/* ---------- Theatre (game) ---------- */
+
+.theatre {
+  background: #121211; color: #f1efe8;
+  padding: clamp(88px, 14vh, 150px) clamp(12px, 4vw, 64px);
+  scroll-margin-top: 56px;
+}
+.theatre-inner { max-width: 1400px; margin: 0 auto; }
+.theatre-head {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end;
+  gap: 16px 40px;
+}
+.theatre-title { display: flex; flex-direction: column; gap: 18px; }
+.theatre-kicker { color: var(--pop); }
+.theatre-quote { max-width: 26ch; color: rgba(241, 239, 232, .75); }
+
+/* ---------- Notes ---------- */
+
+.notes-head {
+  padding: clamp(88px, 14vh, 150px) var(--gutter) clamp(40px, 6vh, 64px);
+  scroll-margin-top: 56px;
+}
+.notes-head .h2-xl .it { color: var(--acc); }
+.notes { padding: 0 var(--gutter); }
+.notes .wrap { display: flex; flex-direction: column; }
+
+.note {
+  display: grid; grid-template-columns: minmax(0, 120px) minmax(0, 1fr);
+  gap: clamp(16px, 4vw, 64px);
+  padding: clamp(48px, 9vh, 88px) 0;
+  border-top: 1px solid var(--line);
+}
+.note-num {
+  font-weight: 800; font-size: clamp(48px, 6vw, 88px); line-height: .8;
+  letter-spacing: -.04em; color: var(--acc);
+}
+.note-body { display: flex; flex-direction: column; gap: 18px; max-width: 720px; }
+.note-body h3 {
+  margin: 0; font-weight: 800; font-size: clamp(30px, 3.4vw, 48px);
+  line-height: 1; letter-spacing: -.03em;
+}
+
+.pull {
+  margin: 0; padding: clamp(56px, 10vh, 110px) 0;
+  border-top: 1px solid var(--line);
+  display: flex; flex-direction: column; gap: 20px; align-items: center; text-align: center;
+}
+.pull-mark { font-weight: 800; font-size: 96px; line-height: .5; color: var(--pop); }
+.pull p {
+  margin: 0; max-width: 20ch; font-family: var(--serif); font-style: italic;
+  font-size: clamp(34px, 5vw, 72px); line-height: 1.08; letter-spacing: -.015em;
+  text-wrap: balance;
+}
+.pull cite { font-style: normal; color: var(--mute); }
+
+.side-note {
+  display: flex; flex-direction: column; gap: 28px;
+  padding: clamp(48px, 9vh, 88px) 0;
+  border-top: 1px solid var(--line);
+}
+.side-label { color: var(--acc); }
+.side-note .body-serif { max-width: 720px; }
+.file-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 14px;
+}
+.file-tile {
+  display: flex; flex-direction: column; gap: 14px;
+  padding: 22px; border-radius: 6px; background: var(--card);
+}
+.file-name { font-family: var(--mono); font-size: clamp(17px, 1.6vw, 20px); color: var(--pop); }
+.file-role {
+  font-weight: 800; font-size: clamp(24px, 2.4vw, 32px); line-height: 1; letter-spacing: -.03em;
+}
+
+/* ---------- Next episode ---------- */
+
+.next { padding: clamp(56px, 10vh, 100px) var(--gutter) clamp(88px, 14vh, 150px); }
+.next .wrap { display: flex; flex-direction: column; gap: 28px; }
+.next-line { color: var(--mute); }
+
+/* Fixed dark panel, so it reads on every palette. */
+.next-card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: clamp(20px, 4vw, 48px); align-items: center;
+  background: #171a2a; color: #f2eee6;
+  border-radius: 6px; padding: clamp(16px, 2vw, 24px);
+}
+.next-thumb {
+  position: relative; aspect-ratio: 16 / 9; border-radius: 4px;
+  border: 1.5px dashed rgba(255, 255, 255, .25);
+  display: grid; place-items: center;
+}
+.next-soon { font-family: var(--serif); font-style: italic; font-size: 30px; opacity: .7; }
+.next-num {
+  position: absolute; left: 14px; bottom: 8px;
+  font-weight: 800; font-size: 84px; line-height: .8;
+  color: transparent; -webkit-text-stroke: 1.5px rgba(255, 255, 255, .35);
+}
+.next-info { display: flex; flex-direction: column; gap: 16px; }
+.next-kicker { color: var(--pop); }
+.next-title {
+  font-weight: 800; font-size: clamp(40px, 5vw, 72px); line-height: .9; letter-spacing: -.045em;
+}
+.next-track { height: 4px; border-radius: 4px; background: rgba(255, 255, 255, .15); overflow: hidden; }
+.next-fill { height: 100%; width: 0%; background: var(--pop); animation: next-fill 8s linear infinite; }
+@keyframes next-fill { from { width: 0%; } to { width: 100%; } }
+
+.foot-links {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px;
+  color: var(--mute);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .next-fill { animation: none; width: 100%; }
+}
