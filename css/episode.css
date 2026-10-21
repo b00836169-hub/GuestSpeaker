@@ -191,8 +191,7 @@
 .cast .h2, .profile .h2 { font-size: clamp(40px, 5.5vw, 80px); }
 .cast-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .cast-card { gap: 10px; }
-/* Smaller speaker photos: 4:5, at most 260px tall. */
-.cast-card img { width: 100%; max-width: 208px; aspect-ratio: 4 / 5; max-height: 260px; }
+.cast-card img { aspect-ratio: 4 / 5; max-height: 340px; }
 .cast-card h3 { font-size: 24px; }
 .cast-card p { font-size: 16px; }
 
@@ -209,7 +208,7 @@
 .side-note { padding: clamp(28px, 5vh, 48px) 0; gap: 20px; }
 .file-tile { padding: 16px; gap: 8px; }
 
-/* ---------- Profile sections: Madina, the narrator ----------
+/* ---------- Profile section: Madina ----------
    Photo left, text right. Set the photo width per section with
    style="--photo-max:380px" on the <section>. */
 
@@ -231,8 +230,8 @@
 @media (max-width: 720px) {
   .key-art { max-height: 44vh; }
   .cast-grid { grid-template-columns: 1fr; gap: 16px; }
-  .cast-card { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 4px 16px; align-items: start; }
-  .cast-card img { grid-row: span 3; width: 76px; max-width: none; aspect-ratio: 1; max-height: none; }
+  .cast-card { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 4px 16px; align-items: start; }
+  .cast-card img { grid-row: span 3; width: 92px; aspect-ratio: 1; max-height: none; }
   .cast-card h3 { font-size: 20px; }
   .cast-card p { font-size: 15px; }
   .cast-card .pill-link { justify-self: start; }
