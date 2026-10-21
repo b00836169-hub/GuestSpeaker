@@ -92,7 +92,85 @@
         <p class="narrator theatre-quote" data-reveal style="--d:200ms">“I turned this session into a story. You make the choices.”</p>
       </div>
       <div data-reveal style="--d:280ms">
-        <div id="launch-day" class="ld-mount" aria-live="polite">
+        <div id="launch-day" class="ld-mount">
+          <div class="stage" id="ld-stage">
+            <canvas id="ld-cv" role="img" aria-label="Launch Day Run. Move between three lanes of light to collect the right pieces and run through the right gates."></canvas>
+
+            <div class="hud" id="ld-hud" hidden>
+              <div class="hud-top">
+                <div class="zone">
+                  <div class="zone-name mono" id="ld-zone-name"><span>01 / 05</span> · Claude chat</div>
+                  <div class="track" id="ld-track"></div>
+                </div>
+                <div class="hud-right">
+                  <div class="goal mono" id="ld-goal">Prompt <b>0/6</b></div>
+                  <button class="icon-btn" id="ld-pause-btn" type="button" aria-label="Pause"><svg viewBox="0 0 12 12" aria-hidden="true"><rect x="2" y="1" width="2.6" height="10" rx="1" fill="currentColor"/><rect x="7.4" y="1" width="2.6" height="10" rx="1" fill="currentColor"/></svg></button>
+                </div>
+              </div>
+              <div></div>
+              <div class="caption" id="ld-caption" aria-live="polite"><span class="mono">Suditi · narrator</span><span id="ld-cap-text"></span></div>
+            </div>
+
+            <div class="card" id="ld-card"><div class="num mono" id="ld-card-num">Zone 01</div><div class="ttl" id="ld-card-ttl">Claude chat</div><div class="sub" id="ld-card-sub"></div></div>
+
+            <div class="screen" id="ld-cover-screen">
+              <div class="cover">
+                <div class="eyebrow mono"><i></i>Episode 01 · Interactive</div>
+                <h3 class="logo">Launch <span class="it">Day.</span></h3>
+                <p class="lede">One night. Five tools. Build a café's website and put it live before the doors open.</p>
+                <div class="note">
+                  <div class="av" aria-hidden="true">K</div>
+                  <div class="hd">Mei · Kopi Corner <span>NOW</span></div>
+                  <p>My café opens at 8 am and I still have no website. Can you help?</p>
+                </div>
+                <div class="row">
+                  <button class="btn" id="ld-play-btn" type="button"><span class="tri" aria-hidden="true"></span>Play episode</button>
+                  <span class="mono stat">About <b>90 sec</b></span>
+                </div>
+                <div class="keys mono">
+                  <span><span class="k">←</span><span class="k">→</span>Lanes</span>
+                  <span><span class="k">↑</span>Jump</span>
+                  <span>Phone: swipe or tap</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="screen" id="ld-pause-screen" hidden>
+              <div class="pause">
+                <div class="eyebrow mono"><i></i>Paused</div>
+                <h3 class="logo">Take a <span class="it">breath.</span></h3>
+                <button class="btn" id="ld-resume-btn" type="button"><span class="tri" aria-hidden="true"></span>Resume</button>
+              </div>
+            </div>
+
+            <div class="screen" id="ld-end-screen" hidden>
+              <div class="end">
+                <div class="eyebrow mono"><i></i>Episode 01 · Complete</div>
+                <h3 class="logo">It's <span class="it">live.</span></h3>
+                <div class="row">
+                  <span class="url"><i aria-hidden="true"></i>kopi-corner.vercel.app</span>
+                  <span class="mono stat" id="ld-end-time">Shipped in <b>1:30</b></span>
+                </div>
+                <div class="note">
+                  <div class="av" aria-hidden="true">K</div>
+                  <div class="hd">Mei · Kopi Corner <span>7:58 AM</span></div>
+                  <p>It's perfect! Can it remember my regulars too?</p>
+                </div>
+                <p class="cliff"><span class="mono">Suditi · narrator</span>Not yet. A basic site forgets everyone the moment they close the tab. That needs a backend, like Supabase. To be continued.</p>
+                <ol class="recap">
+                  <li>Wrote a full prompt in Claude chat</li>
+                  <li>Shaped the look in Claude Design, then used Handoff to Claude Code</li>
+                  <li>Got index.html, styles.css and script.js from Claude Code</li>
+                  <li>Committed, then pushed to GitHub</li>
+                  <li>Imported the repo into Vercel and went live</li>
+                </ol>
+                <div class="row">
+                  <button class="btn" id="ld-again-btn" type="button"><span class="tri" aria-hidden="true"></span>Play again</button>
+                  <a class="btn ghost" href="#notes">Read my notes</a>
+                </div>
+              </div>
+            </div>
+          </div>
           <noscript><p class="narrator">The game needs JavaScript to run.</p></noscript>
         </div>
       </div>
