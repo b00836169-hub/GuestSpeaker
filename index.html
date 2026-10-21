@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>My Semester, in Scenes</title>
+<title>Episode 01: Vibe Coding · My Semester, in Scenes</title>
 <meta name="description" content="Season 01, Episode 01. Vibe Coding with the LaunchLab team from Singapore American School, 9 October 2026.">
 <script>document.documentElement.classList.add('js');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,40 +11,20 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/episode.css">
-<link rel="stylesheet" href="css/home.css">
 <link rel="stylesheet" href="css/launch-day-game.css">
 </head>
 <body>
 
 <header class="site-header">
   <a class="brand" href="index.html"><span class="brand-dot"></span>My Semester, in Scenes</a>
-  <a class="mono hover-acc" href="#episode">Episode 01 ↓</a>
+  <a class="mono hover-acc" href="index.html#episodes">← All episodes</a>
   <div class="progress"><div class="progress-bar" data-progress></div></div>
 </header>
 
 <main>
 
-  <!-- ===== HERO: scroll-scrubbed title sequence. Scroll down plays it forward, scroll up plays it back. ===== -->
-  <section class="hero" id="top" data-hero>
-    <div class="hero-stage">
-      <canvas class="hero-canvas" aria-hidden="true"></canvas>
-      <div class="hero-captions" aria-live="off">
-        <p class="cap mono" data-at="0.02-0.17">Suditi presents</p>
-        <p class="cap cap-serif" data-at="0.20-0.36">A semester, told in episodes</p>
-        <p class="cap cap-serif" data-at="0.40-0.56">Every guest speaker is a new episode</p>
-        <p class="cap mono cap-acc" data-at="0.60-0.78">Season 1 · Now streaming</p>
-        <div class="cap cap-title" data-at="0.9-1.01">
-          <h1>My Semester, <span class="it">in Scenes</span></h1>
-          <a class="btn btn-primary" href="#episode"><span class="play-icon"></span>Start watching</a>
-        </div>
-      </div>
-      <p class="scroll-hint mono" data-scroll-hint>Scroll to begin <span aria-hidden="true">↓</span></p>
-    </div>
-  </section>
-
-
   <!-- ===== EPISODE OPENER: edit S/E number, title, date, narrator line, guest stars ===== -->
-  <section class="opener" id="episode">
+  <section class="opener" id="top">
     <div class="wrap opener-grid">
       <div class="opener-copy">
         <div class="meta-row mono" data-reveal>
@@ -61,7 +41,7 @@
       </div>
       <div class="key-art-wrap" data-reveal style="--d:200ms">
         <div class="key-art" data-parallax>
-          <img src="assets/ep01-key-art.jpg" alt="Rishabh, Nirvan and Yibo presenting at ESSEC" width="1600" height="1200">
+          <img src="assets/ep01-key-art.jpg" alt="Rishabh, Nirvan and Yibo presenting at ESSEC" width="2048" height="1536">
         </div>
         <span class="sticker">Episode 01</span>
       </div>
@@ -112,85 +92,7 @@
         <p class="narrator theatre-quote" data-reveal style="--d:200ms">“I turned this session into a story. You make the choices.”</p>
       </div>
       <div data-reveal style="--d:280ms">
-        <div id="launch-day" class="ld-mount">
-          <div class="stage" id="ld-stage">
-            <canvas id="ld-cv" role="img" aria-label="Launch Day Run. Move between three lanes of light to collect the right pieces and run through the right gates."></canvas>
-
-            <div class="hud" id="ld-hud" hidden>
-              <div class="hud-top">
-                <div class="zone">
-                  <div class="zone-name mono" id="ld-zone-name"><span>01 / 05</span> · Claude chat</div>
-                  <div class="track" id="ld-track"></div>
-                </div>
-                <div class="hud-right">
-                  <div class="goal mono" id="ld-goal">Prompt <b>0/6</b></div>
-                  <button class="icon-btn" id="ld-pause-btn" type="button" aria-label="Pause"><svg viewBox="0 0 12 12" aria-hidden="true"><rect x="2" y="1" width="2.6" height="10" rx="1" fill="currentColor"/><rect x="7.4" y="1" width="2.6" height="10" rx="1" fill="currentColor"/></svg></button>
-                </div>
-              </div>
-              <div></div>
-              <div class="caption" id="ld-caption" aria-live="polite"><span class="mono">Suditi · narrator</span><span id="ld-cap-text"></span></div>
-            </div>
-
-            <div class="card" id="ld-card"><div class="num mono" id="ld-card-num">Zone 01</div><div class="ttl" id="ld-card-ttl">Claude chat</div><div class="sub" id="ld-card-sub"></div></div>
-
-            <div class="screen" id="ld-cover-screen">
-              <div class="cover">
-                <div class="eyebrow mono"><i></i>Episode 01 · Interactive</div>
-                <h3 class="logo">Launch <span class="it">Day.</span></h3>
-                <p class="lede">One night. Five tools. Build a café's website and put it live before the doors open.</p>
-                <div class="note">
-                  <div class="av" aria-hidden="true">K</div>
-                  <div class="hd">Mei · Kopi Corner <span>NOW</span></div>
-                  <p>My café opens at 8 am and I still have no website. Can you help?</p>
-                </div>
-                <div class="row">
-                  <button class="btn" id="ld-play-btn" type="button"><span class="tri" aria-hidden="true"></span>Play episode</button>
-                  <span class="mono stat">About <b>90 sec</b></span>
-                </div>
-                <div class="keys mono">
-                  <span><span class="k">←</span><span class="k">→</span>Lanes</span>
-                  <span><span class="k">↑</span>Jump</span>
-                  <span>Phone: swipe or tap</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="screen" id="ld-pause-screen" hidden>
-              <div class="pause">
-                <div class="eyebrow mono"><i></i>Paused</div>
-                <h3 class="logo">Take a <span class="it">breath.</span></h3>
-                <button class="btn" id="ld-resume-btn" type="button"><span class="tri" aria-hidden="true"></span>Resume</button>
-              </div>
-            </div>
-
-            <div class="screen" id="ld-end-screen" hidden>
-              <div class="end">
-                <div class="eyebrow mono"><i></i>Episode 01 · Complete</div>
-                <h3 class="logo">It's <span class="it">live.</span></h3>
-                <div class="row">
-                  <span class="url"><i aria-hidden="true"></i>kopi-corner.vercel.app</span>
-                  <span class="mono stat" id="ld-end-time">Shipped in <b>1:30</b></span>
-                </div>
-                <div class="note">
-                  <div class="av" aria-hidden="true">K</div>
-                  <div class="hd">Mei · Kopi Corner <span>7:58 AM</span></div>
-                  <p>It's perfect! Can it remember my regulars too?</p>
-                </div>
-                <p class="cliff"><span class="mono">Suditi · narrator</span>Not yet. A basic site forgets everyone the moment they close the tab. That needs a backend, like Supabase. To be continued.</p>
-                <ol class="recap">
-                  <li>Wrote a full prompt in Claude chat</li>
-                  <li>Shaped the look in Claude Design, then used Handoff to Claude Code</li>
-                  <li>Got index.html, styles.css and script.js from Claude Code</li>
-                  <li>Committed, then pushed to GitHub</li>
-                  <li>Imported the repo into Vercel and went live</li>
-                </ol>
-                <div class="row">
-                  <button class="btn" id="ld-again-btn" type="button"><span class="tri" aria-hidden="true"></span>Play again</button>
-                  <a class="btn ghost" href="#notes">Read my notes</a>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div id="launch-day" class="ld-mount" aria-live="polite">
           <noscript><p class="narrator">The game needs JavaScript to run.</p></noscript>
         </div>
       </div>
@@ -260,24 +162,6 @@
     </div>
   </section>
 
-  <!-- ===== THANK YOU: the professor behind the season ===== -->
-  <section class="profile" id="thanks" style="--photo-max:380px">
-    <div class="wrap profile-grid">
-      <div class="profile-photo" data-reveal>
-        <img src="assets/madina-kalyayeva.jpg" alt="Madina Kalyayeva teaching in front of a presentation screen" width="800" height="533" loading="lazy">
-        <span class="sticker">Our professor</span>
-      </div>
-      <div class="profile-copy stack">
-        <div class="rule-row mono">
-          <span data-reveal>Behind the season</span><span class="muted" data-reveal>ESSEC Business School</span>
-        </div>
-        <h2 class="h2" data-reveal style="--d:120ms">Thank you, <span class="it">Madina.</span></h2>
-        <p class="body-serif" data-reveal style="--d:200ms">Thank you, Madina, for encouraging us to look beyond the textbook. After just one session, I’m already looking forward to the next. Every great series has someone who brings the cast together, and for us, that’s you, keeping us curious and connected to the market.</p>
-        <a class="btn btn-outline" data-reveal style="--d:280ms" href="https://www.linkedin.com/in/madinak/" target="_blank" rel="noopener">Madina on LinkedIn ↗</a>
-      </div>
-    </div>
-  </section>
-
   <!-- ===== NEXT EPISODE: when E02 exists, change the <div class="next-card"> to an <a href="episode-02-....html"> ===== -->
   <section class="next">
     <div class="wrap">
@@ -294,6 +178,7 @@
         </div>
       </div>
       <nav class="foot-links mono">
+        <a class="hover-acc" href="index.html#episodes">← Back to all episodes</a>
         <a class="hover-acc" href="#top">Back to top ↑</a>
       </nav>
     </div>
@@ -302,7 +187,6 @@
 </main>
 
 <script src="js/episode.js" defer></script>
-<script src="js/home.js" defer></script>
 <script src="js/launch-day-game.js" defer></script>
 </body>
 </html>
