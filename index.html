@@ -4,20 +4,21 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>My Semester, in Scenes</title>
-<meta name="description" content="My semester at ESSEC Business School, told as a series. One guest speaker, one episode, one lesson I keep.">
-<meta name="theme-color" content="#0d0f1a">
+<meta name="description" content="Season 01, Episode 01. Vibe Coding with the LaunchLab team from Singapore American School, 9 October 2026.">
 <script>document.documentElement.classList.add('js');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/episode.css">
 <link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/launch-day-game.css">
 </head>
 <body>
 
 <header class="site-header">
   <a class="brand" href="index.html"><span class="brand-dot"></span>My Semester, in Scenes</a>
-  <a class="mono hover-acc" href="#episodes">Episodes ↓</a>
+  <a class="mono hover-acc" href="#episode">Episode 01 ↓</a>
   <div class="progress"><div class="progress-bar" data-progress></div></div>
 </header>
 
@@ -34,67 +35,178 @@
         <p class="cap mono cap-acc" data-at="0.60-0.78">Season 1 · Now streaming</p>
         <div class="cap cap-title" data-at="0.9-1.01">
           <h1>My Semester, <span class="it">in Scenes</span></h1>
-          <a class="btn btn-primary" href="#episodes"><span class="play-icon"></span>Start watching</a>
+          <a class="btn btn-primary" href="#episode"><span class="play-icon"></span>Start watching</a>
         </div>
       </div>
       <p class="scroll-hint mono" data-scroll-hint>Scroll to begin <span aria-hidden="true">↓</span></p>
     </div>
   </section>
 
-  <!-- ===== ABOUT ME: the narrator ===== -->
-  <section class="about">
-    <div class="wrap about-grid">
-      <div class="about-photo" data-reveal>
-        <img src="assets/suditi.jpg" alt="Suditi at ESSEC Business School, Singapore" width="960" height="1200" loading="lazy">
-        <span class="sticker">Your narrator</span>
+
+  <!-- ===== EPISODE OPENER: edit S/E number, title, date, narrator line, guest stars ===== -->
+  <section class="opener" id="episode">
+    <div class="wrap opener-grid">
+      <div class="opener-copy">
+        <div class="meta-row mono" data-reveal>
+          <span class="chip-acc">S01 · E01</span>
+          <span class="muted nowrap">9 October 2026</span>
+        </div>
+        <h1 class="ep-title" data-reveal style="--d:120ms">Vibe <span class="it">Coding</span></h1>
+        <p class="narrator" data-reveal style="--d:240ms">“Episode one. Three guest stars walked in. Here is what happened next.”</p>
+        <p class="credits" data-reveal style="--d:320ms"><strong>Guest stars</strong> Rishabh Modi, Nirvan Anand &amp; Yibo Yang, the LaunchLab team from Singapore American School</p>
+        <div class="btn-row" data-reveal style="--d:400ms">
+          <a class="btn btn-primary" href="#game"><span class="play-icon"></span>Play the episode</a>
+          <a class="btn btn-outline" href="#notes">Read my notes</a>
+        </div>
       </div>
-      <div class="about-copy stack">
-        <div class="rule-row mono" data-reveal><span>Meet the narrator</span><span class="muted">ESSEC · Singapore</span></div>
-        <h2 class="h2" data-reveal style="--d:120ms">Hi, I'm <span class="it">Suditi.</span></h2>
-        <p class="body-serif" data-reveal style="--d:200ms">I'm a student at ESSEC Business School in Singapore. This site is my semester told as a series: one guest speaker, one episode, one lesson I keep.</p>
-        <p class="narrator muted" data-reveal style="--d:280ms">“Every episode has a game to play and my notes from the room. Pick one and press play.”</p>
+      <div class="key-art-wrap" data-reveal style="--d:200ms">
+        <div class="key-art" data-parallax>
+          <img src="assets/ep01-key-art.jpg" alt="Rishabh, Nirvan and Yibo presenting at ESSEC" width="2048" height="1536">
+        </div>
+        <span class="sticker">Episode 01</span>
       </div>
     </div>
   </section>
 
-  <!-- ===== EPISODES: one card per guest speaker session. Turn a "soon" card into a link when the episode is ready. ===== -->
-  <section class="episodes" id="episodes">
+  <!-- ===== GUEST STARS: one card per speaker; duplicate or remove as needed ===== -->
+  <section class="cast">
     <div class="wrap stack">
-      <div class="rule-row mono" data-reveal><span>Season 01</span><span class="muted">1 of 5 episodes out</span></div>
-      <h2 class="h2-xl" data-reveal style="--d:120ms">All <span class="it">episodes.</span></h2>
-
-      <a class="ep-feature" href="episode-01-vibe-coding.html" data-reveal style="--d:200ms">
-        <div class="ep-feature-art">
-          <img src="assets/ep01-key-art.jpg" alt="Rishabh, Nirvan and Yibo presenting at ESSEC" loading="lazy">
-          <span class="ep-new mono">New episode</span>
-        </div>
-        <div class="ep-feature-info">
-          <span class="mono ep-kicker">S01 · E01 · 9 October 2026</span>
-          <h3 class="ep-feature-title">Vibe <span class="it">Coding</span></h3>
-          <p class="body-serif muted">Three guest stars from the LaunchLab team at Singapore American School show how an idea becomes a live website: Claude Design, Claude Code, GitHub and Vercel.</p>
-          <span class="btn btn-primary ep-play"><span class="play-icon"></span>Watch episode</span>
-        </div>
-      </a>
-
-      <div class="ep-row">
-        <div class="ep-soon" data-reveal><span class="ep-num" aria-hidden="true">02</span><span class="mono">S01 · E02</span><span class="ep-soon-t">Coming <span class="it">soon</span></span></div>
-        <div class="ep-soon" data-reveal style="--d:100ms"><span class="ep-num" aria-hidden="true">03</span><span class="mono">S01 · E03</span><span class="ep-soon-t">Coming <span class="it">soon</span></span></div>
-        <div class="ep-soon" data-reveal style="--d:200ms"><span class="ep-num" aria-hidden="true">04</span><span class="mono">S01 · E04</span><span class="ep-soon-t">Coming <span class="it">soon</span></span></div>
-        <div class="ep-soon" data-reveal style="--d:300ms"><span class="ep-num" aria-hidden="true">05</span><span class="mono">S01 · E05</span><span class="ep-soon-t">Coming <span class="it">soon</span></span></div>
+      <div class="rule-row mono">
+        <span data-reveal>The cast</span><span class="muted" data-reveal>LaunchLab · Singapore American School</span>
+      </div>
+      <h2 class="h2" data-reveal>Guest <span class="it">stars</span></h2>
+      <div class="cast-grid">
+        <article class="cast-card" data-reveal>
+          <img src="assets/rishabh-modi.png" alt="Rishabh Modi" style="object-position:50% 15%" loading="lazy">
+          <h3>Rishabh Modi</h3>
+          <p>Student at Singapore American School and part of the LaunchLab team. Co-led our session on Claude Design, Claude Code, GitHub and Vercel.</p>
+          <!-- TODO: add LinkedIn URL -->
+          <a class="pill-link mono" href="#" data-todo-link>LinkedIn ↗</a>
+        </article>
+        <article class="cast-card" data-reveal style="--d:120ms">
+          <img src="assets/nirvan-anand.png" alt="Nirvan Anand" style="object-position:50% 30%" loading="lazy">
+          <h3>Nirvan Anand</h3>
+          <p>Student at Singapore American School and part of the LaunchLab team. Co-led our session on building and launching websites with AI.</p>
+          <!-- TODO: add LinkedIn URL -->
+          <a class="pill-link mono" href="#" data-todo-link>LinkedIn ↗</a>
+        </article>
+        <article class="cast-card" data-reveal style="--d:240ms">
+          <img src="assets/yibo-yang.png" alt="Yibo Yang" style="object-position:50% 35%" loading="lazy">
+          <h3>Yibo Yang</h3>
+          <p>Student at Singapore American School and part of the LaunchLab team. Co-led our session on vibe coding, from design to a live site.</p>
+          <!-- TODO: add LinkedIn URL -->
+          <a class="pill-link mono" href="#" data-todo-link>LinkedIn ↗</a>
+        </article>
       </div>
     </div>
   </section>
 
-  <footer class="home-foot">
-    <div class="wrap foot-links mono">
-      <span>Digital Platforms · ESSEC Business School</span>
-      <a class="hover-acc" href="#top">Back to top ↑</a>
+  <!-- ===== THE GAME: "lights down" theatre section ===== -->
+  <section class="theatre" id="game">
+    <div class="theatre-inner stack">
+      <div class="theatre-head">
+        <div class="theatre-title">
+          <span class="mono theatre-kicker" data-reveal>Theatre mode · Lights down</span>
+          <h2 class="h2" data-reveal style="--d:120ms">Your turn to <span class="it">direct.</span></h2>
+        </div>
+        <p class="narrator theatre-quote" data-reveal style="--d:200ms">“I turned this session into a story. You make the choices.”</p>
+      </div>
+      <div data-reveal style="--d:280ms">
+        <div id="launch-day" class="ld-mount" aria-live="polite">
+          <noscript><p class="narrator">The game needs JavaScript to run.</p></noscript>
+        </div>
+      </div>
     </div>
-  </footer>
+  </section>
+
+  <!-- ===== MY NOTES: magazine recap; add or remove note blocks freely ===== -->
+  <section class="notes-head" id="notes">
+    <div class="wrap stack">
+      <div class="rule-row mono">
+        <span data-reveal>The recap · My notes</span><span class="muted" data-reveal>3 min read</span>
+      </div>
+      <h2 class="h2-xl" data-reveal>What I took <span class="it">home.</span></h2>
+    </div>
+  </section>
+
+  <section class="notes">
+    <div class="wrap">
+      <div class="note">
+        <span class="note-num" data-reveal>01</span>
+        <div class="note-body">
+          <h3 data-reveal style="--d:100ms">Prompting is the real skill.</h3>
+          <p class="body-serif" data-reveal style="--d:200ms">A vague prompt gives a vague website. A good one gives Claude a role, a goal, the audience, the design style, the pages, the key features and the output I need. So I started in Claude chat: I described what I wanted in detail, and it wrote the prompt for me.</p>
+        </div>
+      </div>
+
+      <div class="note">
+        <span class="note-num" data-reveal>02</span>
+        <div class="note-body">
+          <h3 data-reveal style="--d:100ms">Design first, then build.</h3>
+          <p class="body-serif" data-reveal style="--d:200ms">I took that prompt into Claude Design and shaped the whole look: layout, typography, colour palette and visual identity. I uploaded my files and fed in my words and data. Once I was happy, I used “Handoff to Claude Code” in the Share menu, and Claude Code turned the design into a working site.</p>
+        </div>
+      </div>
+
+      <blockquote class="pull" data-reveal>
+        <span class="pull-mark" aria-hidden="true">“</span>
+        <p>You don’t need to know coding. Just explain it in plain English, and you’ll see the magic.</p>
+        <cite class="mono">— The LaunchLab team</cite>
+      </blockquote>
+
+      <div class="note">
+        <span class="note-num" data-reveal>03</span>
+        <div class="note-body">
+          <h3 data-reveal style="--d:100ms">GitHub stores. Vercel shows.</h3>
+          <p class="body-serif" data-reveal style="--d:200ms">I created a repository on GitHub and asked Claude Code to push my project into it. A commit saves my work on my computer; a push sends it to GitHub. Then I imported the repository into Vercel, which built the site and gave it a public link. Now every time I push, the live site updates on its own.</p>
+        </div>
+      </div>
+
+      <div class="side-note">
+        <span class="mono side-label" data-reveal>Side note · Three files run a website</span>
+        <div class="file-grid">
+          <div class="file-tile" data-reveal>
+            <span class="file-name">index.html</span>
+            <span class="file-role">The words</span>
+          </div>
+          <div class="file-tile" data-reveal style="--d:120ms">
+            <span class="file-name">styles.css</span>
+            <span class="file-role">The look</span>
+          </div>
+          <div class="file-tile" data-reveal style="--d:240ms">
+            <span class="file-name">script.js</span>
+            <span class="file-role">What happens on a click</span>
+          </div>
+        </div>
+        <p class="body-serif" data-reveal style="--d:320ms">And one limit: a basic site has no memory. It forgets everyone when they close the tab, and it only knows what is in its own files. Logins and saved data need a backend, like Supabase.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NEXT EPISODE: when E02 exists, change the <div class="next-card"> to an <a href="episode-02-....html"> ===== -->
+  <section class="next">
+    <div class="wrap">
+      <p class="narrator next-line" data-reveal>“That is the end of episode one. The next one is still being written.”</p>
+      <div class="next-card" data-reveal style="--d:120ms">
+        <div class="next-thumb">
+          <span class="next-soon">Coming soon</span>
+          <span class="next-num" aria-hidden="true">02</span>
+        </div>
+        <div class="next-info">
+          <span class="mono next-kicker">Next episode · S01 · E02</span>
+          <span class="next-title">To be <span class="it">announced</span></span>
+          <div class="next-track"><div class="next-fill"></div></div>
+        </div>
+      </div>
+      <nav class="foot-links mono">
+        <a class="hover-acc" href="#top">Back to top ↑</a>
+      </nav>
+    </div>
+  </section>
 
 </main>
 
 <script src="js/episode.js" defer></script>
 <script src="js/home.js" defer></script>
+<script src="js/launch-day-game.js" defer></script>
 </body>
 </html>
