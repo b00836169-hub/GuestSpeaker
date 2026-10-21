@@ -101,7 +101,7 @@
 .portrait img {
   width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 45%; border-radius: 12px;
 }
-.portrait.is-landscape img { aspect-ratio: 3 / 2; object-position: 40% 25%; }
+.portrait.is-landscape img { aspect-ratio: 3 / 2; object-position: 50% 12%; }
 .portrait .sticker-r {
   position: absolute; right: -10px; top: 24px; transform: rotate(6deg);
   background: var(--pop); color: #16150f; font-weight: 800; font-size: 15px;
