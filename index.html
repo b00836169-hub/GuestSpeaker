@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>My Semester, in Scenes</title>
+<title>Episode 01: Vibe Coding · My Semester, in Scenes</title>
 <meta name="description" content="Season 01, Episode 01. Vibe Coding with the LaunchLab team from Singapore American School, 9 October 2026.">
 <script>document.documentElement.classList.add('js');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,40 +11,20 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/episode.css">
-<link rel="stylesheet" href="css/home.css">
 <link rel="stylesheet" href="css/launch-day-game.css">
 </head>
 <body>
 
 <header class="site-header">
   <a class="brand" href="index.html"><span class="brand-dot"></span>My Semester, in Scenes</a>
-  <a class="mono hover-acc" href="#episode">Episode 01 ↓</a>
+  <a class="mono hover-acc" href="index.html#episodes">← All episodes</a>
   <div class="progress"><div class="progress-bar" data-progress></div></div>
 </header>
 
 <main>
 
-  <!-- ===== HERO: scroll-scrubbed title sequence. Scroll down plays it forward, scroll up plays it back. ===== -->
-  <section class="hero" id="top" data-hero>
-    <div class="hero-stage">
-      <canvas class="hero-canvas" aria-hidden="true"></canvas>
-      <div class="hero-captions" aria-live="off">
-        <p class="cap mono" data-at="0.02-0.17">Suditi presents</p>
-        <p class="cap cap-serif" data-at="0.20-0.36">A semester, told in episodes</p>
-        <p class="cap cap-serif" data-at="0.40-0.56">Every guest speaker is a new episode</p>
-        <p class="cap mono cap-acc" data-at="0.60-0.78">Season 1 · Now streaming</p>
-        <div class="cap cap-title" data-at="0.9-1.01">
-          <h1>My Semester, <span class="it">in Scenes</span></h1>
-          <a class="btn btn-primary" href="#episode"><span class="play-icon"></span>Start watching</a>
-        </div>
-      </div>
-      <p class="scroll-hint mono" data-scroll-hint>Scroll to begin <span aria-hidden="true">↓</span></p>
-    </div>
-  </section>
-
-
   <!-- ===== EPISODE OPENER: edit S/E number, title, date, narrator line, guest stars ===== -->
-  <section class="opener" id="episode">
+  <section class="opener" id="top">
     <div class="wrap opener-grid">
       <div class="opener-copy">
         <div class="meta-row mono" data-reveal>
@@ -198,6 +178,7 @@
         </div>
       </div>
       <nav class="foot-links mono">
+        <a class="hover-acc" href="index.html#episodes">← Back to all episodes</a>
         <a class="hover-acc" href="#top">Back to top ↑</a>
       </nav>
     </div>
@@ -206,7 +187,6 @@
 </main>
 
 <script src="js/episode.js" defer></script>
-<script src="js/home.js" defer></script>
 <script src="js/launch-day-game.js" defer></script>
 </body>
 </html>
