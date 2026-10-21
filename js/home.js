@@ -32,7 +32,7 @@
       // Frame grows from a panel under the title to full screen over the first 22%.
       let k = clamp01(p / 0.22); k = 1 - Math.pow(1 - k, 3);
       const top0 = Math.max(innerHeight * 0.3, title.offsetTop + title.offsetHeight + 28);
-      frame.style.clipPath = `inset(${((1 - k) * top0).toFixed(1)}px ${(1 - k) * 4}vw ${(1 - k) * 5}vh ${(1 - k) * 4}vw round ${(1 - k) * 16}px)`;
+      frame.style.clipPath = `inset(${((1 - k) * top0).toFixed(1)}px ${(1 - k) * 4}vw ${(1 - k) * 5}vh ${(1 - k) * 4}vw round ${(1 - k) * 12}px)`;
       title.style.opacity = clamp01(1 - k * 1.5).toFixed(3);
       title.style.transform = `translateY(${-k * 60}px)`;
 

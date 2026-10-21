@@ -27,7 +27,7 @@
 /* Starts as a framed panel under the title, grows to full screen. */
 .hero-frame {
   position: absolute; inset: 0; background: #15140f; color: #fff;
-  clip-path: inset(30vh 4vw 5vh 4vw round 16px); will-change: clip-path;
+  clip-path: inset(30vh 4vw 5vh 4vw round 12px); will-change: clip-path;
 }
 .hero-still { position: absolute; inset: 0; will-change: transform; transform: scale(1.12); }
 .hero-still img, .hero-still video {
@@ -83,32 +83,45 @@
 .ticker-track span::after { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--pop); }
 @keyframes ticker { to { transform: translateX(-50%); } }
 
-/* ---------- Editor's letter ---------- */
+/* ---------- Editor's letter and Madina's thank-you ----------
+   Same layout for both: photo on the left, text on the right.
+   Photo widths: portrait 320px, Madina's landscape photo 380px. */
 
-.letter { padding: clamp(88px, 14vh, 150px) var(--gutter); scroll-margin-top: 60px; }
-.letter .wrap { display: flex; flex-direction: column; gap: clamp(36px, 5vw, 64px); }
+/* Episodes above already ends with a full gap, so Madina's section adds none on top. */
+.letter, .thanks { padding: clamp(88px, 14vh, 150px) var(--gutter); scroll-margin-top: 60px; }
+.thanks { padding-top: 0; padding-bottom: 0; }
+.letter .wrap, .thanks .wrap { display: flex; flex-direction: column; gap: clamp(36px, 5vw, 64px); }
 .letter-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
-  gap: clamp(36px, 6vw, 96px); align-items: start;
+  --photo-max: 320px;
+  display: grid; grid-template-columns: minmax(0, var(--photo-max)) minmax(0, 1fr);
+  gap: clamp(36px, 6vw, 96px); align-items: center;
 }
+.thanks .letter-grid { --photo-max: 380px; }
 .portrait { position: relative; }
 .portrait img {
-  width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 45%; border-radius: 4px;
+  width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 45%; border-radius: 12px;
 }
+.portrait.is-landscape img { aspect-ratio: 3 / 2; object-position: 40% 25%; }
 .portrait .sticker-r {
   position: absolute; right: -10px; top: 24px; transform: rotate(6deg);
   background: var(--pop); color: #16150f; font-weight: 800; font-size: 15px;
   padding: 8px 14px; border-radius: 999px; white-space: nowrap;
 }
 .letter-copy { display: flex; flex-direction: column; gap: 28px; }
-.letter-copy .h2 { font-size: clamp(44px, 6.4vw, 96px); line-height: .9; letter-spacing: -.04em; }
+.letter-copy .h2 { font-size: clamp(36px, 5vw, 72px); line-height: .9; letter-spacing: -.04em; }
 .letter-copy .h2 .it { color: var(--acc); }
+.letter-copy .btn { align-self: flex-start; }
 .letter-body {
   margin: 0; font-family: var(--serif);
-  font-size: clamp(22px, 2vw, 28px); line-height: 1.45; text-wrap: pretty;
+  font-size: clamp(18px, 1.6vw, 22px); line-height: 1.45; text-wrap: pretty;
 }
 .signoff { display: flex; flex-direction: column; gap: 6px; border-top: 1px solid var(--line); padding-top: 20px; }
-.signoff-name { font-family: var(--serif); font-style: italic; font-size: clamp(32px, 3.4vw, 48px); line-height: 1; }
+.signoff-name { font-family: var(--serif); font-style: italic; font-size: clamp(26px, 2.6vw, 36px); line-height: 1; }
+
+@media (max-width: 720px) {
+  .letter-grid { grid-template-columns: 1fr; }
+  .portrait { max-width: 260px; }
+}
 
 /* ---------- Episodes ---------- */
 
@@ -121,7 +134,7 @@
 .episodes-head .narrator { max-width: 24ch; line-height: 1.25; color: var(--mute); }
 
 .thumb {
-  position: relative; display: block; aspect-ratio: 16 / 10; border-radius: 4px; overflow: hidden;
+  position: relative; display: block; aspect-ratio: 16 / 10; border-radius: 12px; overflow: hidden;
   background: repeating-linear-gradient(135deg, rgba(255, 255, 255, .05) 0 2px, transparent 2px 14px), #15140f;
 }
 .thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 58%; }
@@ -135,11 +148,12 @@
 .feature {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
   gap: clamp(24px, 4vw, 56px); align-items: center;
-  background: var(--card); border-radius: 6px; padding: clamp(14px, 2vw, 22px);
+  background: var(--card); border-radius: 12px; padding: clamp(14px, 2vw, 22px);
 }
-.feature .thumb { transition: opacity .3s; }
+/* Image is 80% of its column: 20% smaller than the full column. */
+.feature .thumb { width: 80%; transition: opacity .3s; }
 .feature .thumb:hover { opacity: .92; }
-.feature .thumb-num { font-size: clamp(80px, 10vw, 150px); }
+.feature .thumb-num { font-size: clamp(64px, 8vw, 120px); }
 .feature-badge {
   position: absolute; z-index: 1; right: 16px; top: 16px; transform: rotate(-5deg);
   background: var(--pop); color: #16150f; font-weight: 800; font-size: 13px; letter-spacing: .02em;
@@ -172,12 +186,12 @@
   padding: 24px var(--rail-pad) 8px;
 }
 .rail::-webkit-scrollbar { display: none; }
-.rail-item { flex: none; width: clamp(260px, 26vw, 340px); scroll-snap-align: start; display: flex; flex-direction: column; gap: 12px; }
+.rail-item { flex: none; width: clamp(208px, 20.8vw, 272px); scroll-snap-align: start; display: flex; flex-direction: column; gap: 12px; }
 a.rail-item { transition: transform .5s var(--ease); }
 a.rail-item:hover { transform: translateY(-6px); }
 .rail-item .thumb { outline: 3px solid var(--acc); outline-offset: 3px; }
 .rail-item .thumb::after { background: linear-gradient(transparent 40%, rgba(0, 0, 0, .7)); }
-.rail-item .thumb-num { left: 12px; bottom: 6px; font-size: 72px; letter-spacing: 0; }
+.rail-item .thumb-num { left: 12px; bottom: 6px; font-size: 58px; letter-spacing: 0; }
 .rail-watch {
   position: absolute; z-index: 1; right: 10px; top: 10px;
   background: var(--acc); color: var(--onacc); font-size: 10px; padding: 4px 8px; border-radius: 999px;
@@ -186,11 +200,11 @@ a.rail-item:hover { transform: translateY(-6px); }
 .rail-date { color: var(--mute); }
 
 .soon-box {
-  position: relative; aspect-ratio: 16 / 10; border-radius: 4px; border: 1.5px dashed var(--line);
+  position: relative; aspect-ratio: 16 / 10; border-radius: 12px; border: 1.5px dashed var(--line);
   display: flex; align-items: flex-start; justify-content: flex-end; padding: 14px 16px;
 }
-.soon-box .it { font-size: 28px; color: var(--mute); }
-.soon-box .thumb-num { left: 12px; bottom: 6px; font-size: 72px; letter-spacing: 0; -webkit-text-stroke-color: var(--line); }
+.soon-box .it { font-size: 22px; color: var(--mute); }
+.soon-box .thumb-num { left: 12px; bottom: 6px; font-size: 58px; letter-spacing: 0; -webkit-text-stroke-color: var(--line); }
 .is-soon .rail-name { color: var(--mute); }
 
 /* ---------- Footer (fixed dark panel, reads on every palette) ---------- */
