@@ -178,6 +178,67 @@
   color: var(--mute);
 }
 
+/* ---------- Compact layout: shorter page, smaller images ---------- */
+
+.opener { padding: clamp(84px, 12vh, 112px) var(--gutter) clamp(40px, 6vh, 64px); }
+.opener-grid { align-items: center; }
+.opener-copy { gap: 18px; }
+.ep-title { font-size: clamp(64px, 9vw, 140px); }
+.key-art { aspect-ratio: 4 / 3; max-height: 62vh; }
+
+.cast { padding: 0 var(--gutter) clamp(48px, 8vh, 88px); }
+.cast .stack, .thanks .stack { gap: clamp(20px, 3vw, 32px); }
+.cast .h2, .thanks .h2 { font-size: clamp(40px, 5.5vw, 80px); }
+.cast-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.cast-card { gap: 10px; }
+.cast-card img { aspect-ratio: 4 / 5; max-height: 340px; }
+.cast-card h3 { font-size: 24px; }
+.cast-card p { font-size: 16px; }
+
+.theatre { padding: clamp(56px, 9vh, 96px) clamp(12px, 4vw, 64px); }
+
+.notes-head { padding: clamp(56px, 9vh, 96px) var(--gutter) clamp(20px, 3vh, 32px); }
+.note { padding: clamp(28px, 5vh, 48px) 0; }
+.note-num { font-size: clamp(36px, 4vw, 60px); }
+.note-body { gap: 12px; }
+.note-body h3 { font-size: clamp(26px, 2.6vw, 38px); }
+.pull { padding: clamp(36px, 6vh, 64px) 0; gap: 14px; }
+.pull-mark { font-size: 72px; }
+.pull p { font-size: clamp(28px, 3.6vw, 52px); }
+.side-note { padding: clamp(28px, 5vh, 48px) 0; gap: 20px; }
+.file-tile { padding: 16px; gap: 8px; }
+
+/* ---------- Thank you ---------- */
+
+.thanks { padding: clamp(56px, 9vh, 96px) var(--gutter) 0; }
+.thanks-grid {
+  display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: clamp(24px, 4vw, 56px); align-items: center;
+}
+.thanks-photo { position: relative; }
+.thanks-photo img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; object-position: 50% 30%; border-radius: 6px; display: block; }
+.thanks-photo .sticker { left: auto; right: -10px; bottom: 18px; transform: rotate(4deg); }
+.thanks .h2 .it { color: var(--acc); }
+.thanks .body-serif { max-width: 46ch; margin: 0; }
+.thanks .btn { align-self: flex-start; }
+
+.next { padding: clamp(40px, 6vh, 64px) var(--gutter) clamp(48px, 8vh, 80px); }
+.next-thumb { aspect-ratio: 21 / 9; }
+.next-num { font-size: 64px; }
+
+@media (max-width: 720px) {
+  .key-art { max-height: 44vh; }
+  .cast-grid { grid-template-columns: 1fr; gap: 16px; }
+  .cast-card { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 4px 16px; align-items: start; }
+  .cast-card img { grid-row: span 3; width: 92px; aspect-ratio: 1; max-height: none; }
+  .cast-card h3 { font-size: 20px; }
+  .cast-card p { font-size: 15px; }
+  .cast-card .pill-link { justify-self: start; }
+  .note { grid-template-columns: 1fr; gap: 6px; }
+  .thanks-grid { grid-template-columns: 1fr; }
+  .thanks-photo { max-width: 420px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .next-fill { animation: none; width: 100%; }
 }
