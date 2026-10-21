@@ -147,3 +147,6 @@ html.js [data-reveal].is-in { opacity: 1; transform: none; filter: none; }
   display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 6px 16px;
   border-top: 3px solid var(--ink); padding-top: 14px; white-space: nowrap;
 }
+
+/* Smaller quote text across all pages. */
+.narrator { font-size: clamp(18px, 1.6vw, 22px); }

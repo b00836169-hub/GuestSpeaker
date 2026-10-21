@@ -202,3 +202,17 @@
 /* Keep faces in frame now the guest photos are shorter. */
 .cast-card img[alt="Rishabh Modi"] { object-position: 50% 4% !important; }
 .cast-card img[alt="Nirvan Anand"] { object-position: 50% 0% !important; }
+
+/* Smaller text in the quote and in "What I took home". */
+.notes-head .h2-xl { font-size: clamp(44px, 6.5vw, 96px); }
+.note-num { font-size: clamp(32px, 3.4vw, 52px); }
+.note-body h3 { font-size: clamp(24px, 2.4vw, 34px); }
+.notes .body-serif { font-size: clamp(16px, 1.2vw, 18px); }
+.pull-mark { font-size: 60px; }
+.pull p { font-size: clamp(24px, 3vw, 40px); }
+.file-role { font-size: clamp(20px, 2vw, 26px); }
+.file-name { font-size: clamp(15px, 1.3vw, 17px); }
+.note { padding: clamp(28px, 5vh, 48px) 0; }
+.note-body { gap: 12px; }
+.pull { padding: clamp(36px, 6vh, 64px) 0; gap: 14px; }
+.side-note { padding: clamp(28px, 5vh, 48px) 0; gap: 20px; }

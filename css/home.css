@@ -243,3 +243,8 @@ a.rail-item:hover { transform: translateY(-6px); }
 @media (prefers-reduced-motion: reduce) {
   .ticker-track { animation: none; }
 }
+
+/* Smaller text in the letter and the thank-you section. */
+.letter-copy .h2 { font-size: clamp(36px, 5vw, 72px); }
+.letter-body { font-size: clamp(18px, 1.6vw, 22px); }
+.signoff-name { font-size: clamp(26px, 2.6vw, 36px); }
