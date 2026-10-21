@@ -178,6 +178,27 @@
   color: var(--mute);
 }
 
+/* ---------- Smaller photos, slightly rounded corners ---------- */
+
+.key-art { aspect-ratio: 4 / 3; max-height: 60vh; border-radius: 12px; }
+.key-art img { object-position: 50% 55%; }
+.cast-card img { max-height: 260px; border-radius: 12px; }
+.next-card, .file-tile { border-radius: 12px; }
+.next-thumb { border-radius: 10px; }
+
+@media (max-width: 720px) {
+  .cast-grid { grid-template-columns: 1fr; gap: 16px; }
+  .cast-card { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 4px 14px; align-items: start; }
+  .cast-card img { grid-row: span 3; width: 76px; aspect-ratio: 1; max-height: none; border-radius: 10px; }
+  .cast-card h3 { font-size: 22px; }
+  .cast-card p { font-size: 15px; }
+  .cast-card .pill-link { justify-self: start; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .next-fill { animation: none; width: 100%; }
 }
+
+/* Keep faces in frame now the guest photos are shorter. */
+.cast-card img[alt="Rishabh Modi"] { object-position: 50% 4% !important; }
+.cast-card img[alt="Nirvan Anand"] { object-position: 50% 0% !important; }

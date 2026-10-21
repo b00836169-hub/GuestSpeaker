@@ -201,6 +201,45 @@ a.rail-item:hover { transform: translateY(-6px); }
 .footer-line .it { color: var(--pop); }
 .footer-meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; opacity: .75; }
 
+/* ---------- Thank you (Madina) ---------- */
+
+.thanks { padding: clamp(64px, 10vh, 110px) var(--gutter) 0; scroll-margin-top: 60px; }
+.thanks .wrap { display: flex; flex-direction: column; gap: clamp(28px, 4vw, 48px); }
+.thanks-grid {
+  display: grid; grid-template-columns: minmax(0, 380px) minmax(0, 1fr);
+  gap: clamp(28px, 5vw, 72px); align-items: center;
+}
+.thanks-photo { position: relative; }
+.thanks-photo img {
+  width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; object-position: 45% 30%;
+  border-radius: 12px; display: block;
+}
+.thanks-photo .sticker-r {
+  position: absolute; right: -10px; top: 18px; transform: rotate(6deg);
+  background: var(--pop); color: #16150f; font-weight: 800; font-size: 15px;
+  padding: 8px 14px; border-radius: 999px; white-space: nowrap;
+}
+.thanks .letter-copy { gap: 22px; }
+.thanks .btn { align-self: flex-start; }
+
+/* ---------- Smaller photos, slightly rounded corners ---------- */
+
+.letter { padding: clamp(64px, 10vh, 110px) var(--gutter) clamp(88px, 14vh, 150px); }
+.letter-grid { grid-template-columns: minmax(0, 320px) minmax(0, 1fr); align-items: center; }
+.portrait img { border-radius: 12px; }
+.thumb, .soon-box { border-radius: 12px; }
+.feature { border-radius: 16px; }
+@media (min-width: 761px) {
+  .feature { grid-template-columns: minmax(0, 4fr) minmax(0, 5fr); }
+}
+.rail-item { width: clamp(220px, 21vw, 272px); }
+.rail-item .thumb-num, .soon-box .thumb-num { font-size: 58px; }
+
+@media (max-width: 760px) {
+  .thanks-grid, .letter-grid { grid-template-columns: 1fr; }
+  .thanks-photo, .portrait { max-width: 260px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .ticker-track { animation: none; }
 }
