@@ -31,7 +31,7 @@
 .key-art-wrap { position: relative; }
 /* Landscape 4:3, never taller than 60% of the screen. Width follows, so it never squashes. */
 .key-art {
-  aspect-ratio: 4 / 3; max-width: calc(60vh * 4 / 3); border-radius: 12px; overflow: hidden;
+  aspect-ratio: 4 / 3; max-width: calc(60vh * 4 / 3); border-radius: var(--photo-radius); overflow: hidden;
   background: #15140f; will-change: transform;
 }
 .key-art img {
@@ -55,7 +55,7 @@
 .cast-card { display: flex; flex-direction: column; gap: 14px; }
 /* 4:5, at most 260px tall. object-position on each image keeps the face in view. */
 .cast-card img {
-  width: 100%; max-width: 208px; aspect-ratio: 4 / 5; max-height: 260px; object-fit: cover; border-radius: 12px;
+  width: 100%; max-width: 208px; aspect-ratio: 4 / 5; max-height: 260px; object-fit: cover; border-radius: var(--photo-radius);
 }
 .cast-card h3 {
   margin: 0; font-weight: 800; font-size: 30px; letter-spacing: -.03em; line-height: 1;
@@ -68,7 +68,7 @@
 /* ---------- Theatre (game) ---------- */
 
 .theatre {
-  background: #121211; color: #f1efe8;
+  background: var(--band); color: var(--on-band);
   padding: clamp(88px, 14vh, 150px) clamp(12px, 4vw, 64px);
   scroll-margin-top: 56px;
 }
@@ -153,11 +153,11 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
   gap: clamp(20px, 4vw, 48px); align-items: center;
-  background: #171a2a; color: #f2eee6;
-  border-radius: 12px; padding: clamp(16px, 2vw, 24px);
+  background: var(--band); color: var(--on-band);
+  border-radius: var(--photo-radius); padding: clamp(16px, 2vw, 24px);
 }
 .next-thumb {
-  position: relative; aspect-ratio: 16 / 9; border-radius: 12px;
+  position: relative; aspect-ratio: 16 / 9; border-radius: var(--photo-radius);
   border: 1.5px dashed rgba(255, 255, 255, .25);
   display: grid; place-items: center;
 }

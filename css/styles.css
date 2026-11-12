@@ -11,14 +11,19 @@
   --mute: #a7a6b4;
   --line: rgba(242, 238, 230, .14);
   --acc: #ff5a36;
+  --acc-hover: #ff7955;
   --onacc: #0d0f1a;
   --pop: #ffc94a;
+  --band: #171a2a;
+  --on-band: #f2eee6;
+  --glow: rgba(255, 90, 54, .35);
 
   --sans: 'Bricolage Grotesque', system-ui, sans-serif;
   --serif: 'Newsreader', serif;
   --mono: 'JetBrains Mono', monospace;
   --ease: cubic-bezier(.2, .7, .2, 1);
   --gutter: clamp(16px, 5vw, 80px);
+  --photo-radius: 12px;
 }
 
 html[data-palette="paper-cobalt"] {
@@ -32,6 +37,25 @@ html[data-palette="cream-tomato"] {
 html[data-palette="ink-lime"] {
   --bg: #121211; --card: #1d1d1b; --ink: #f1efe8; --mute: #a5a29b;
   --line: rgba(241, 239, 232, .16); --acc: #c6f35e; --onacc: #121211; --pop: #ff7ab8;
+}
+
+/* "Cream & ink": option A from the colour guidelines (Nov 2026).
+   Cream ground, near-black ink, burnt orange accent used sparingly.
+   The game canvas keeps its own look for now; only the site shell changes here. */
+html[data-palette="cream-ink"] {
+  --bg: #F3EEE3;
+  --card: #FFFFFF;
+  --ink: #111111;
+  --mute: #5A5650;
+  --line: rgba(17, 17, 17, .2);
+  --acc: #D9541E;
+  --acc-hover: #BF4617;
+  --onacc: #111111;
+  --pop: #5A5650;
+  --band: #111111;
+  --on-band: #F3EEE3;
+  --glow: rgba(217, 84, 30, .35);
+  --photo-radius: 6px;
 }
 
 /* ---------- Base ---------- */
@@ -146,4 +170,71 @@ html.js [data-reveal].is-in { opacity: 1; transform: none; filter: none; }
 .rule-row {
   display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 6px 16px;
   border-top: 3px solid var(--ink); padding-top: 14px; white-space: nowrap;
+}
+
+/* ==========================================================
+   Cream & ink overrides.
+   --pop is remapped to --mute above for plain text on the cream
+   ground (pull quotes, file labels, hero captions). Three kinds of
+   spot need their own fix because the blanket swap doesn't suit them:
+   filled badges (muted-on-muted would fail contrast), mono labels
+   that sit on a dark ink band (muted is tuned for cream, not ink),
+   and progress bars and dots, which the guideline keeps as accent.
+   ========================================================== */
+
+html[data-palette="cream-ink"] .portrait .sticker-r,
+html[data-palette="cream-ink"] .feature-badge,
+html[data-palette="cream-ink"] .sticker {
+  background: var(--card);
+  color: var(--mute);
+  border: 1px solid var(--line);
+  box-shadow: none;
+}
+
+html[data-palette="cream-ink"] .theatre-kicker,
+html[data-palette="cream-ink"] .next-kicker,
+html[data-palette="cream-ink"] .hero-cap .is-pop {
+  color: rgba(243, 238, 227, .7);
+}
+
+/* Footer sits back on the cream ground, so its italic word takes the
+   accent like every other headline italic, not the dark-band muted. */
+html[data-palette="cream-ink"] .footer-line .it {
+  color: var(--acc);
+}
+
+/* The trailer hero is a photo/video with a dark gradient over it, not
+   the page ground, so its text stays light on every palette. */
+html[data-palette="cream-ink"] .hero-title,
+html[data-palette="cream-ink"] .hero-caps {
+  color: #f2eee6;
+}
+html[data-palette="cream-ink"] .hero-meta {
+  color: rgba(242, 238, 230, .75);
+}
+
+html[data-palette="cream-ink"] .next-fill,
+html[data-palette="cream-ink"] .ticker-track span::after {
+  background: var(--acc);
+}
+
+/* White mat behind guest and portrait photos, like a print. The
+   image keeps its own aspect ratio and crop; the mat is a thick
+   border in the card colour plus a hairline edge. */
+html[data-palette="cream-ink"] .portrait img,
+html[data-palette="cream-ink"] .cast-card img {
+  box-sizing: border-box;
+  border: 10px solid var(--card);
+  box-shadow: 0 0 0 1px var(--line);
+}
+
+/* Episode cards get a hairline edge instead of a shadow. */
+html[data-palette="cream-ink"] .thumb {
+  box-shadow: 0 0 0 1px var(--line);
+}
+
+html[data-palette="cream-ink"] a:focus-visible,
+html[data-palette="cream-ink"] button:focus-visible {
+  outline: 2px solid var(--acc);
+  outline-offset: 2px;
 }

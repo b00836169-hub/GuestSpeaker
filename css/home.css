@@ -99,7 +99,7 @@
 .thanks .letter-grid { --photo-max: 380px; }
 .portrait { position: relative; }
 .portrait img {
-  width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 45%; border-radius: 12px;
+  width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 45%; border-radius: var(--photo-radius);
 }
 .portrait.is-landscape img { aspect-ratio: 3 / 2; object-position: 50% 12%; }
 .portrait .sticker-r {
@@ -134,7 +134,7 @@
 .episodes-head .narrator { max-width: 24ch; line-height: 1.25; color: var(--mute); }
 
 .thumb {
-  position: relative; display: block; aspect-ratio: 16 / 10; border-radius: 12px; overflow: hidden;
+  position: relative; display: block; aspect-ratio: 16 / 10; border-radius: var(--photo-radius); overflow: hidden;
   background: repeating-linear-gradient(135deg, rgba(255, 255, 255, .05) 0 2px, transparent 2px 14px), #15140f;
 }
 .thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 58%; }
@@ -148,7 +148,7 @@
 .feature {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
   gap: clamp(24px, 4vw, 56px); align-items: center;
-  background: var(--card); border-radius: 12px; padding: clamp(14px, 2vw, 22px);
+  background: var(--card); border-radius: var(--photo-radius); padding: clamp(14px, 2vw, 22px);
 }
 /* Image is 80% of its column: 20% smaller than the full column. */
 .feature .thumb { width: 80%; transition: opacity .3s; }
@@ -200,16 +200,19 @@ a.rail-item:hover { transform: translateY(-6px); }
 .rail-date { color: var(--mute); }
 
 .soon-box {
-  position: relative; aspect-ratio: 16 / 10; border-radius: 12px; border: 1.5px dashed var(--line);
+  position: relative; aspect-ratio: 16 / 10; border-radius: var(--photo-radius); border: 1.5px dashed var(--line);
   display: flex; align-items: flex-start; justify-content: flex-end; padding: 14px 16px;
 }
 .soon-box .it { font-size: 22px; color: var(--mute); }
 .soon-box .thumb-num { left: 12px; bottom: 6px; font-size: 58px; letter-spacing: 0; -webkit-text-stroke-color: var(--line); }
 .is-soon .rail-name { color: var(--mute); }
 
-/* ---------- Footer (fixed dark panel, reads on every palette) ---------- */
+/* ---------- Footer ---------- */
+/* Midnight Reel keeps its fixed dark panel. Cream & ink puts the
+   footer back on the cream ground, per the colour guideline. */
 
-.site-footer { background: #171a2a; color: #f2eee6; padding: clamp(80px, 14vh, 150px) var(--gutter) 36px; }
+.site-footer { background: var(--band); color: var(--on-band); padding: clamp(80px, 14vh, 150px) var(--gutter) 36px; }
+html[data-palette="cream-ink"] .site-footer { background: var(--bg); color: var(--mute); }
 .site-footer .wrap { display: flex; flex-direction: column; gap: 64px; }
 .footer-line { margin: 0; font-weight: 800; font-size: clamp(48px, 9vw, 140px); line-height: .86; letter-spacing: -.045em; }
 .footer-line .it { color: var(--pop); }
