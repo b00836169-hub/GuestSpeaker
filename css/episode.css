@@ -156,11 +156,17 @@
   background: var(--band); color: var(--on-band);
   border-radius: var(--photo-radius); padding: clamp(16px, 2vw, 24px);
 }
+a.next-card { transition: opacity .25s; }
+a.next-card:hover { opacity: .88; }
 .next-thumb {
   position: relative; aspect-ratio: 16 / 9; border-radius: var(--photo-radius);
   border: 1.5px dashed rgba(255, 255, 255, .25);
-  display: grid; place-items: center;
+  display: grid; place-items: center; overflow: hidden;
 }
+.next-thumb img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 25%;
+}
+.next-thumb:has(img) { border-style: solid; border-color: rgba(255, 255, 255, .15); }
 .next-soon { font-family: var(--serif); font-style: italic; font-size: 30px; opacity: .7; }
 .next-num {
   position: absolute; left: 14px; bottom: 8px;

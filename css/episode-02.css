@@ -1,0 +1,107 @@
+/* ==========================================================
+   Episode 02 page: extra components on top of episode.css.
+   ========================================================== */
+
+/* ---------- Opener video ---------- */
+
+.ep02-video-frame { background: #15140f; }
+.ep02-opener-video {
+  width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%;
+}
+
+/* ---------- Meet the guest ---------- */
+
+.meet-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
+  gap: clamp(32px, 5vw, 64px);
+  align-items: start;
+}
+.meet-photos { display: flex; flex-direction: column; gap: 14px; }
+.meet-portrait {
+  width: 100%; max-width: 220px; aspect-ratio: 1 / 1; object-fit: cover;
+  border-radius: var(--photo-radius);
+  box-sizing: border-box; border: 10px solid var(--card); box-shadow: 0 0 0 1px var(--line);
+}
+.meet-class {
+  width: 100%; max-width: 280px; aspect-ratio: 4 / 5; object-fit: cover;
+  border-radius: var(--photo-radius);
+  box-sizing: border-box; border: 10px solid var(--card); box-shadow: 0 0 0 1px var(--line);
+}
+.meet-caption { max-width: 280px; }
+.meet-copy { display: flex; flex-direction: column; gap: 16px; }
+.meet-copy h3 { margin: 0; font-weight: 800; font-size: clamp(28px, 3vw, 40px); letter-spacing: -.03em; }
+
+@media (max-width: 720px) {
+  .meet-grid { grid-template-columns: 1fr; }
+}
+
+/* ---------- The big idea: the one inverted band on this page ---------- */
+
+.big-idea {
+  background: var(--band); color: var(--on-band);
+  padding: clamp(72px, 12vh, 130px) var(--gutter);
+  text-align: center;
+}
+.big-idea .stack { align-items: center; gap: clamp(20px, 3vw, 32px); }
+.big-idea-kicker { color: rgba(243, 238, 227, .7); }
+.big-idea-title { max-width: 18ch; }
+.big-idea-title .it { color: var(--acc); }
+.big-idea-quote { max-width: 28ch; color: rgba(243, 238, 227, .85); font-size: clamp(20px, 2.2vw, 28px); }
+.big-idea-body { max-width: 56ch; color: rgba(243, 238, 227, .85); }
+
+/* ---------- The handoff ---------- */
+
+.handoff-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 14px;
+}
+.handoff-step {
+  display: flex; flex-direction: column; gap: 10px;
+  padding: 18px 16px; border-radius: var(--photo-radius);
+  border: 1px solid var(--line);
+}
+.handoff-step.is-you { border-color: var(--acc); background: var(--card); }
+.handoff-num { font-family: var(--mono); font-size: 13px; color: var(--acc); letter-spacing: .08em; }
+.handoff-step h4 { margin: 0; font-weight: 800; font-size: 18px; letter-spacing: -.02em; }
+.handoff-step p { margin: 0; font-size: 14px; line-height: 1.45; color: var(--mute); }
+
+@media (max-width: 900px) {
+  .handoff-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* ---------- CRAFT ---------- */
+
+.craft-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+}
+.craft-tile {
+  display: flex; flex-direction: column; gap: 10px;
+  padding: 24px 18px; border-radius: var(--photo-radius);
+  border: 1px solid var(--line); background: var(--card);
+}
+.craft-letter {
+  font-weight: 800; font-size: 40px; line-height: 1; color: var(--acc);
+  font-family: var(--serif); font-style: italic;
+}
+.craft-tile h4 { margin: 0; font-weight: 800; font-size: 17px; letter-spacing: -.02em; }
+.craft-tile p { margin: 0; font-size: 14px; line-height: 1.45; color: var(--mute); }
+
+@media (max-width: 900px) {
+  .craft-grid {
+    grid-auto-flow: column; grid-auto-columns: minmax(160px, 1fr);
+    overflow-x: auto; padding-bottom: 8px; grid-template-columns: none;
+  }
+}
+
+/* ---------- I tried it myself / one last thought ---------- */
+
+.tried-grid { display: flex; flex-direction: column; gap: 16px; max-width: 720px; }
+.tried-photo {
+  width: 100%; max-width: 560px; border-radius: var(--photo-radius);
+  box-sizing: border-box; border: 1px solid var(--line);
+}
+.tried-copy { margin: 0; }
