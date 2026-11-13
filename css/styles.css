@@ -203,14 +203,11 @@ html[data-palette="cream-ink"] .footer-line .it {
   color: var(--acc);
 }
 
-/* The trailer hero is a photo/video with a dark gradient over it, not
-   the page ground, so its text stays light on every palette. */
-html[data-palette="cream-ink"] .hero-title,
+/* The hero captions sit on the photo with a dark gradient over it, so
+   they stay light. The title and season lines above the photo sit on
+   the cream page itself, so they keep the normal ink and muted colours. */
 html[data-palette="cream-ink"] .hero-caps {
   color: #f2eee6;
-}
-html[data-palette="cream-ink"] .hero-meta {
-  color: rgba(242, 238, 230, .75);
 }
 
 html[data-palette="cream-ink"] .next-fill,
