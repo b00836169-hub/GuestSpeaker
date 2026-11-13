@@ -9,6 +9,14 @@
 #ai-hq {
   --deep: #06070d;
   --glass: rgba(13, 15, 26, .58);
+  /* The game stage keeps its own dark backdrop on every page palette,
+     so its text colours are pinned here instead of following the
+     page's --ink/--mute/--pop/--line, which change per palette and
+     would otherwise go dark-on-dark. */
+  --ink: #f2eee6;
+  --mute: #a7a6b4;
+  --pop: #ffc94a;
+  --line: rgba(242, 238, 230, .14);
   color: var(--ink);
   font-family: var(--sans);
 }
