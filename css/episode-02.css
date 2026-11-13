@@ -1,0 +1,243 @@
+/* ==========================================================
+   Episode 02 · The Virtual Team.
+   Page-only styles. Everything is scoped under body.ep02, so the
+   shared episode template (episode.css) stays as it is for Episode 01.
+   Palette: Paper & Cobalt (data-palette="paper-cobalt" on <html>).
+   ========================================================== */
+
+.ep02 .mono { font-size: 12px; }
+.ep02 .ep02-col { display: flex; flex-direction: column; gap: clamp(12px, 1.6vw, 20px); }
+.ep02 .is-acc { color: var(--acc); }
+
+.ep02-h2 {
+  margin: 0; font-weight: 800;
+  font-size: clamp(28px, 3.6vw, 48px); line-height: 1; letter-spacing: -.045em;
+}
+.ep02-body {
+  margin: 0; max-width: 640px; font-family: var(--serif);
+  font-size: clamp(16px, 1.3vw, 18px); line-height: 1.6; text-wrap: pretty;
+}
+.ep02-frame { width: 100%; border-radius: var(--photo-radius); overflow: hidden; }
+.ep02-frame img { width: 100%; height: 100%; object-fit: cover; }
+.ep02-figure { margin: 0; display: flex; flex-direction: column; gap: 8px; }
+
+/* ---------- 1 · Opener ---------- */
+
+.ep02 .opener { padding: clamp(84px, 12vh, 104px) var(--gutter) clamp(28px, 5vh, 56px); }
+.ep02 .opener-grid { align-items: center; }
+.ep02 .opener-copy { gap: 16px; }
+.ep02 .ep-title {
+  font-size: clamp(40px, 6vw, 84px); line-height: .9; letter-spacing: -.05em; text-wrap: balance;
+}
+.ep02 .credits { max-width: 52ch; }
+
+/* Team graphic behind a 9:16 session clip. */
+.ep02-media { position: relative; display: flex; justify-content: center; align-items: center; }
+.ep02-media-bg {
+  position: absolute; inset: 0; border-radius: var(--photo-radius); overflow: hidden;
+  background: radial-gradient(ellipse at 50% 50%, #1b1d30, #0d0f1a 75%);
+  border: 1px solid var(--line);
+}
+.ep02-media-bg canvas, .handoff-stage canvas { display: block; width: 100%; height: 100%; }
+.ep02-clip {
+  position: relative; height: min(60vh, 533px); aspect-ratio: 9 / 16;
+  margin: clamp(16px, 3vw, 32px); border-radius: var(--photo-radius); overflow: hidden;
+  background: #0d0f1a; box-shadow: 0 20px 60px rgba(0, 0, 0, .45);
+}
+.ep02-clip video { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+/* ---------- 2 · Meet Nick Goh ---------- */
+
+.ep02-guest { padding: 0 var(--gutter) clamp(28px, 5vh, 56px); scroll-margin-top: 72px; }
+.guest-row { display: flex; flex-wrap: wrap; gap: clamp(16px, 2.4vw, 32px); align-items: stretch; }
+.guest-photo {
+  flex: 0 0 clamp(150px, 18vw, 220px); align-self: flex-start;
+  aspect-ratio: 1; border-radius: var(--photo-radius); overflow: hidden;
+}
+.guest-photo img { width: 100%; height: 100%; object-fit: cover; }
+.guest-info { flex: 1 1 320px; display: flex; flex-direction: column; justify-content: space-between; gap: 16px; }
+.guest-top { display: flex; flex-direction: column; gap: 10px; }
+.guest-name-row { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 16px; }
+.guest-name-row .pill-link { white-space: nowrap; }
+.guest-roles {
+  margin: 0; font-family: var(--mono); font-size: 12px; letter-spacing: .06em; line-height: 1.8;
+  text-transform: uppercase; color: var(--acc);
+}
+.guest-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 0 24px; }
+.fact { display: flex; flex-direction: column; gap: 6px; padding-top: 12px; border-top: 1px solid var(--line); }
+.fact-text { font-family: var(--serif); font-size: 17px; line-height: 1.4; text-wrap: pretty; }
+
+/* ---------- 3 · The big idea ---------- */
+
+.ep02-idea { padding: 0 var(--gutter) clamp(28px, 5vh, 56px); }
+.idea-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  gap: clamp(20px, 4vw, 56px); align-items: center;
+  border-top: 1px solid var(--line); padding-top: clamp(28px, 5vh, 56px);
+}
+.idea-copy { display: flex; flex-direction: column; gap: 16px; }
+.idea-kicker { color: var(--acc); }
+.idea-title {
+  margin: 0; max-width: 22ch; font-weight: 800;
+  font-size: clamp(24px, 3vw, 40px); line-height: 1.05; letter-spacing: -.045em; text-wrap: balance;
+}
+.idea-title .it { color: var(--pop); }
+.idea-photo { justify-self: end; width: 100%; max-width: 400px; }
+
+/* ---------- 4 · The handoff ---------- */
+
+.ep02-handoff { position: relative; padding: 0 var(--gutter) clamp(28px, 5vh, 56px); }
+.ep02-handoff .ep02-col { gap: 16px; }
+.handoff-stage {
+  width: 100%; height: clamp(180px, 28vh, 280px); border-radius: var(--photo-radius); overflow: hidden;
+  background: radial-gradient(ellipse at 50% 50%, #1b1d30, #0d0f1a 70%);
+}
+.handoff-body { display: flex; flex-direction: column; gap: 14px; }
+.handoff-line { position: relative; height: 2px; background: var(--line); }
+.handoff-fill {
+  position: absolute; left: 0; top: 0; bottom: 0; width: 0%;
+  background: linear-gradient(90deg, var(--acc), var(--pop)); box-shadow: 0 0 12px var(--pop);
+}
+.handoff-fill span {
+  position: absolute; right: -5px; top: -4px; width: 10px; height: 10px; border-radius: 50%;
+  background: var(--pop); box-shadow: 0 0 14px var(--pop);
+}
+.handoff-steps {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;
+}
+@media (min-width: 900px) { .handoff-steps { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
+.step {
+  display: flex; flex-direction: column; gap: 8px; padding: 14px; border-radius: var(--photo-radius);
+  background: var(--card); border: 1.5px solid transparent; opacity: .55;
+  transition: opacity .5s, border-color .5s, box-shadow .5s;
+}
+.step.is-done { opacity: .8; }
+.step.is-next { opacity: .4; }
+.step.is-active { opacity: 1; border-color: var(--pop); box-shadow: 0 0 36px rgba(255, 201, 74, .25); }
+.step-n { font-family: var(--mono); font-size: 12px; letter-spacing: .12em; color: var(--mute); }
+.step.is-done .step-n, .step.is-active .step-n { color: var(--pop); }
+.step-t { font-weight: 800; font-size: clamp(16px, 1.4vw, 20px); line-height: 1.05; letter-spacing: -.02em; }
+.step-d { font-family: var(--serif); font-size: 14px; line-height: 1.4; color: var(--mute); }
+.handoff-foot {
+  margin: 4px 0 0; font-family: var(--serif); font-style: italic;
+  font-size: clamp(17px, 1.4vw, 20px); color: var(--mute);
+}
+
+/* ---------- 5 · CRAFT ---------- */
+
+.ep02-craft { padding: clamp(28px, 5vh, 56px) var(--gutter); }
+.craft-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px 40px; }
+.craft-sub { display: flex; flex-direction: column; gap: 8px; }
+.craft-sub p { margin: 0; font-family: var(--serif); font-style: italic; font-size: clamp(20px, 1.8vw, 26px); }
+.craft-row {
+  display: grid; grid-auto-flow: column; grid-auto-columns: minmax(150px, 1fr); gap: 12px;
+  overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 4px;
+}
+.craft-card {
+  perspective: 900px; aspect-ratio: 4 / 5; min-height: 180px; cursor: pointer; scroll-snap-align: start;
+  border-radius: var(--photo-radius);
+}
+.craft-card:focus-visible { outline: 2px solid var(--acc); outline-offset: 3px; }
+.craft-inner {
+  position: relative; width: 100%; height: 100%; transform-style: preserve-3d;
+  transition: transform .8s var(--ease);
+}
+.craft-card.is-flipped .craft-inner { transform: rotateY(180deg); }
+.craft-face {
+  position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden;
+  border-radius: var(--photo-radius); background: var(--card); border: 1px solid var(--line);
+  display: flex; flex-direction: column; justify-content: space-between; padding: 18px;
+}
+.craft-back { transform: rotateY(180deg); background: var(--pop); color: #16150f; border: 0; }
+.craft-l { font-weight: 800; font-size: clamp(32px, 3.4vw, 44px); line-height: .9; letter-spacing: -.05em; color: var(--acc); }
+.craft-w { font-weight: 800; font-size: 18px; letter-spacing: -.02em; }
+.craft-b { font-family: var(--serif); font-style: italic; font-size: clamp(16px, 1.3vw, 18px); line-height: 1.3; }
+
+/* ---------- 6 · The game band (dark, on every palette) ---------- */
+
+.ep02 .theatre {
+  background: #121211; color: #f1efe8;
+  padding: clamp(28px, 5vh, 56px) clamp(12px, 4vw, 64px);
+}
+.ep02 .theatre-title { gap: 18px; }
+
+/* ---------- 7 · The question I left with ---------- */
+
+.ep02-question { padding: clamp(28px, 5vh, 56px) var(--gutter); }
+.question-inner {
+  max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; align-items: center;
+  text-align: center; gap: clamp(12px, 1.6vw, 20px);
+}
+.question-kicker { color: var(--pop); }
+.question-quote {
+  margin: 0; max-width: 28ch; font-family: var(--serif); font-style: italic;
+  font-size: clamp(24px, 3vw, 40px); line-height: 1.15; letter-spacing: -.02em; text-wrap: balance;
+}
+.question-inner .ep02-body { max-width: 620px; }
+.question-takeaway {
+  margin: 0; font-weight: 800; font-size: clamp(18px, 1.9vw, 26px); line-height: 1.2;
+  letter-spacing: -.02em; color: var(--acc); text-wrap: balance;
+}
+
+/* ---------- 8 · What I took home ---------- */
+
+.ep02-lessons { padding: 0 var(--gutter) clamp(28px, 5vh, 56px); scroll-margin-top: 72px; }
+.ep02-lessons .ep02-h2 { letter-spacing: -.05em; }
+.lesson-grid {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 0 32px;
+}
+.lesson {
+  display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 16px; align-items: center;
+  padding: 16px 0; border-top: 1px solid var(--line);
+}
+.lesson-i {
+  width: 40px; height: 40px; border-radius: 50%; border: 1.5px solid var(--acc);
+  display: grid; place-items: center; font-size: 18px; color: var(--acc);
+}
+.lesson-t { font-weight: 800; font-size: clamp(18px, 1.6vw, 22px); line-height: 1.2; letter-spacing: -.02em; text-wrap: balance; }
+.tools { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.tools > .mono { margin-right: 6px; }
+.tool {
+  font-family: var(--mono); font-size: 12px; padding: 7px 12px; border-radius: 999px;
+  background: var(--card); white-space: nowrap;
+}
+
+/* ---------- 9 · One last thought + my answer ---------- */
+
+.ep02-last { padding: clamp(28px, 5vh, 56px) var(--gutter); }
+.last-inner {
+  display: flex; flex-direction: column; align-items: center; gap: clamp(20px, 3vw, 32px);
+  border-top: 1px solid var(--line); padding-top: clamp(28px, 5vh, 56px);
+}
+.last-top { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; }
+.last-lede {
+  margin: 0; max-width: 44ch; font-family: var(--serif); font-size: 18px; line-height: 1.5;
+  color: var(--mute); text-wrap: pretty;
+}
+.last-ask {
+  margin: 0; max-width: 22ch; font-weight: 800; font-size: clamp(24px, 3vw, 40px);
+  line-height: 1.05; letter-spacing: -.035em; text-wrap: balance;
+}
+.answer-card {
+  width: 100%; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  gap: clamp(20px, 3vw, 40px); align-items: center;
+  background: var(--card); border-radius: var(--photo-radius); padding: clamp(14px, 2vw, 24px);
+}
+.answer-copy { display: flex; flex-direction: column; gap: 14px; }
+.answer-kicker { color: var(--acc); }
+.answer-copy .ep02-h2 { letter-spacing: -.04em; }
+.answer-copy .ep02-body { max-width: 560px; }
+.group-photo { width: 100%; max-width: 720px; align-items: center; }
+.group-photo figcaption { letter-spacing: .08em; }
+
+/* ---------- 10 · Next episode (card colour as in the design) ---------- */
+
+.ep02 .next { padding: clamp(28px, 5vh, 56px) var(--gutter); }
+.ep02 .next .wrap { gap: 16px; }
+.ep02 .next-card { background: var(--card); color: var(--ink); border-radius: 6px; }
+.ep02 .next-thumb { border-radius: 4px; border-color: var(--line); }
+.ep02 .next-num { font-size: 44px; -webkit-text-stroke-color: var(--mute); }
+.ep02 .next-title { font-size: clamp(28px, 3.6vw, 48px); line-height: 1; letter-spacing: -.04em; }
+.ep02 .next-track { background: var(--line); }
