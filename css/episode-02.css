@@ -32,8 +32,17 @@
 .meet-copy { display: flex; flex-direction: column; gap: 16px; }
 .meet-copy h3 { margin: 0; font-weight: 800; font-size: clamp(28px, 3vw, 40px); letter-spacing: -.03em; }
 
+.meet-stats {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 2.5vw, 28px);
+  padding: 20px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+}
+.meet-stat-label { display: block; font-family: var(--mono); font-size: 11px; letter-spacing: .1em; color: var(--mute); margin-bottom: 8px; }
+.meet-stat p { margin: 0; font-size: 15px; line-height: 1.4; }
+
 @media (max-width: 720px) {
   .meet-grid { grid-template-columns: 1fr; }
+  .meet-stats { grid-template-columns: 1fr; gap: 18px; }
 }
 
 /* ---------- The big idea: the one inverted band on this page ---------- */
@@ -51,6 +60,25 @@
 .big-idea-body { max-width: 56ch; color: rgba(243, 238, 227, .85); }
 
 /* ---------- The handoff ---------- */
+
+.handoff-diagram {
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--photo-radius);
+  padding: clamp(16px, 3vw, 32px);
+}
+.handoff-diagram svg { display: block; width: 100%; height: auto; }
+.hd-lines line { stroke: var(--acc); stroke-width: 1; opacity: .45; }
+.hd-node { fill: var(--card); stroke: var(--acc); stroke-width: 1.5; }
+.hd-core { fill: var(--acc); }
+.hd-label {
+  font-family: var(--mono); font-size: 11px; letter-spacing: .08em; fill: var(--mute);
+}
+.hd-core-label {
+  font-family: var(--mono); font-size: 10px; letter-spacing: .08em; fill: var(--onacc);
+}
+
+@media (max-width: 640px) {
+  .handoff-diagram { display: none; }
+}
 
 .handoff-grid {
   display: grid;

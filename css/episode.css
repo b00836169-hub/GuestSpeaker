@@ -128,6 +128,10 @@
 }
 .side-label { color: var(--acc); }
 .side-note .body-serif { max-width: 720px; }
+.insight-statement {
+  margin: 0; max-width: 720px;
+  font-weight: 800; font-size: clamp(20px, 2.4vw, 28px); line-height: 1.3; letter-spacing: -.02em;
+}
 .file-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
