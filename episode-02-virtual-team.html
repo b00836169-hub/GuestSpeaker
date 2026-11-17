@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" data-palette="paper-cobalt" data-reveal-style="rise">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Episode 02: The Virtual Team · My Semester, in Scenes</title>
+<meta name="description" content="Season 01, Episode 02. Group chat, but everyone’s AI. A guest session with Nick Goh, 30 October 2026.">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/episode.css">
+<link rel="stylesheet" href="css/episode-02.css">
+<link rel="stylesheet" href="css/ai-hq-game.css">
+</head>
+<body class="ep02">
+
+<header class="site-header">
+  <a class="brand" href="index.html"><span class="brand-dot"></span>My Semester, in Scenes</a>
+  <a class="mono hover-acc" href="index.html#episodes">← All episodes</a>
+  <div class="progress"><div class="progress-bar" data-progress></div></div>
+</header>
+
+<main>
+
+  <!-- ===== 1 · OPENER ===== -->
+  <section class="opener" id="top">
+    <div class="wrap opener-grid">
+      <div class="opener-copy">
+        <div class="meta-row mono" data-reveal>
+          <span class="chip-acc">S01 · E02</span>
+          <span class="muted nowrap">30 October 2026</span>
+          <span class="muted nowrap">Guest session with Nick Goh</span>
+        </div>
+        <h1 class="ep-title" data-reveal style="--d:120ms">Group chat, but <span class="it">everyone’s AI.</span></h1>
+        <p class="narrator" data-reveal style="--d:240ms">One brief. Six AI roles. One connected workflow.</p>
+        <p class="credits" data-reveal style="--d:320ms">In this session, <strong>Nick Goh</strong> showed us how Claude Projects can turn separate AI conversations into a virtual marketing team.</p>
+        <div class="btn-row" data-reveal style="--d:400ms">
+          <a class="btn btn-primary" href="#game"><span class="play-icon"></span>Play the episode</a>
+          <a class="btn btn-outline" href="#notes">Read my notes</a>
+        </div>
+      </div>
+      <div class="ep02-media" data-reveal style="--d:200ms">
+        <div class="ep02-media-bg"><canvas data-team-graphic aria-hidden="true"></canvas></div>
+        <div class="ep02-clip">
+          <video src="assets/ep02-session-clip.mp4" autoplay loop muted playsinline preload="metadata" aria-label="A short clip from the session with Nick Goh"></video>
+        </div>
+        <span class="sticker">Episode 02</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 2 · MEET NICK GOH ===== -->
+  <section class="ep02-guest" id="guests">
+    <div class="wrap ep02-col">
+      <div class="rule-row mono">
+        <span data-reveal>The guest</span><span class="muted" data-reveal>Singapore</span>
+      </div>
+      <div class="guest-row">
+        <div class="guest-photo" data-reveal>
+          <img src="assets/nick-goh.jpg" alt="Nick Goh" width="800" height="800" loading="lazy">
+        </div>
+        <div class="guest-info">
+          <div class="guest-top">
+            <div class="guest-name-row">
+              <h2 class="ep02-h2" data-reveal>Meet <span class="it">Nick Goh</span></h2>
+              <a class="pill-link mono" data-reveal href="https://www.linkedin.com/in/thedigitalkaypoh/" target="_blank" rel="noopener" aria-label="Nick Goh on LinkedIn">LinkedIn ↗</a>
+            </div>
+            <p class="guest-roles" data-reveal style="--d:80ms">CEO, INSPIRO Consulting · CMO, Yellow Pages Singapore · Marketing Lead, YP Academy</p>
+          </div>
+          <div class="guest-facts">
+            <div class="fact" data-reveal style="--d:120ms"><span class="mono muted">Career</span><span class="fact-text">Agency leadership at Lowe &amp; Partners and Euro RSCG (now Havas)</span></div>
+            <div class="fact" data-reveal style="--d:200ms"><span class="mono muted">Brands</span><span class="fact-text">Worked with SAP, Red Hat, Prudential and UOB</span></div>
+            <div class="fact" data-reveal style="--d:280ms"><span class="mono muted">Judge</span><span class="fact-text">Effie Awards Singapore and the Singapore Media Awards</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3 · THE BIG IDEA ===== -->
+  <section class="ep02-idea">
+    <div class="wrap idea-grid">
+      <div class="idea-copy">
+        <span class="mono idea-kicker" data-reveal>The big idea</span>
+        <h2 class="idea-title" data-reveal style="--d:100ms">Stop thinking in prompts. <span class="it">Start thinking in teams.</span></h2>
+        <p class="ep02-body" data-reveal style="--d:200ms">Nick used a fictional brief for The Row: launch an eco-friendly bag. Each Claude conversation played one role, and the work moved from one role to the next, from the first email to the final creative.</p>
+        <span class="mono muted" data-reveal style="--d:260ms">Fictional class brief. Not affiliated with The Row.</span>
+      </div>
+      <figure class="ep02-figure idea-photo" data-reveal style="--d:160ms">
+        <div class="ep02-frame" style="aspect-ratio:5/4">
+          <img src="assets/ep02-class-photo.jpg" alt="Madina introducing Nick Goh in class" width="1200" height="1600" loading="lazy" style="object-position:50% 52%">
+        </div>
+        <figcaption class="mono muted">Madina introducing Nick, 30 October 2026</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== 4 · THE HANDOFF: steps light up as the section scrolls past ===== -->
+  <section class="ep02-handoff" data-handoff>
+    <div class="wrap ep02-col">
+      <div class="rule-row mono">
+        <span>The handoff</span><span class="muted">Six roles, one workflow</span>
+      </div>
+      <div class="handoff-stage"><canvas data-team-graphic data-handoff-graphic aria-hidden="true"></canvas></div>
+      <div class="handoff-body">
+        <div class="handoff-line"><div class="handoff-fill" data-handoff-fill><span></span></div></div>
+        <ol class="handoff-steps">
+          <li class="step" data-step><span class="step-n">01</span><span class="step-t">The brief lands</span><span class="step-d">A campaign request arrives by email.</span></li>
+          <li class="step" data-step><span class="step-n">02</span><span class="step-t">Brief Writer</span><span class="step-d">Turns the email into a structured marketing brief.</span></li>
+          <li class="step" data-step><span class="step-n">03</span><span class="step-t">Brief Validator</span><span class="step-d">Checks the brief in a new chat, with fresh eyes.</span></li>
+          <li class="step" data-step><span class="step-n">04</span><span class="step-t">Strategist</span><span class="step-d">Uses research and project documents to shape the big idea. Research tools like SOMIN and SOMONITOR, from the Singapore company SOMIN.ai, help compare competitors.</span></li>
+          <li class="step" data-step><span class="step-n">05</span><span class="step-t">You</span><span class="step-d">Approve the work and save it to the knowledge base. The human stays in charge.</span></li>
+          <li class="step" data-step><span class="step-n">06</span><span class="step-t">Creative team</span><span class="step-d">Builds the messaging for each platform and the key visuals, such as an Instagram post and story.</span></li>
+        </ol>
+        <p class="handoff-foot">Claude Projects hold the knowledge and instructions. Skills give each role its own job.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 5 · CRAFT: flip cards (hover on desktop, tap on phones, Enter or Space by keyboard) ===== -->
+  <section class="ep02-craft">
+    <div class="wrap ep02-col">
+      <div class="craft-head">
+        <h2 class="ep02-h2" data-reveal style="max-width:20ch">A framework worth <span class="it is-acc">remembering.</span></h2>
+        <div class="craft-sub" data-reveal style="--d:120ms">
+          <p>CRAFT, a simple way to structure prompts.</p>
+          <span class="mono muted">Tap or hover a letter</span>
+        </div>
+      </div>
+      <div class="craft-row">
+        <div class="craft-card" data-reveal data-craft role="button" tabindex="0" aria-pressed="false"><div class="craft-inner">
+          <div class="craft-face"><span class="craft-l">C</span><span class="craft-w">Concept</span></div>
+          <div class="craft-face craft-back"><span class="mono">C · Concept</span><span class="craft-b">A quiet-luxury launch for an eco-friendly bag.</span></div>
+        </div></div>
+        <div class="craft-card" data-reveal data-craft role="button" tabindex="0" aria-pressed="false"><div class="craft-inner">
+          <div class="craft-face"><span class="craft-l">R</span><span class="craft-w">Role</span></div>
+          <div class="craft-face craft-back"><span class="mono">R · Role</span><span class="craft-b">You are a senior strategist at a luxury agency.</span></div>
+        </div></div>
+        <div class="craft-card" data-reveal data-craft role="button" tabindex="0" aria-pressed="false"><div class="craft-inner">
+          <div class="craft-face"><span class="craft-l">A</span><span class="craft-w">Activity</span></div>
+          <div class="craft-face craft-back"><span class="mono">A · Activity</span><span class="craft-b">Write three campaign ideas from the brief.</span></div>
+        </div></div>
+        <div class="craft-card" data-reveal data-craft role="button" tabindex="0" aria-pressed="false"><div class="craft-inner">
+          <div class="craft-face"><span class="craft-l">F</span><span class="craft-w">Format</span></div>
+          <div class="craft-face craft-back"><span class="mono">F · Format</span><span class="craft-b">A one-page table: idea, insight, channel.</span></div>
+        </div></div>
+        <div class="craft-card" data-reveal data-craft role="button" tabindex="0" aria-pressed="false"><div class="craft-inner">
+          <div class="craft-face"><span class="craft-l">T</span><span class="craft-w">Test</span></div>
+          <div class="craft-face craft-back"><span class="mono">T · Test</span><span class="craft-b">Check each idea against the brand voice and the brief.</span></div>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 6 · THE GAME: "Your AI HQ" ===== -->
+  <section class="theatre" id="game">
+    <div class="theatre-inner ep02-col">
+      <div class="theatre-head">
+        <div class="theatre-title">
+          <span class="mono theatre-kicker" data-reveal>Theatre mode · Lights down</span>
+          <h2 class="ep02-h2" data-reveal style="--d:120ms">Your turn to <span class="it">direct.</span></h2>
+        </div>
+        <p class="narrator theatre-quote" data-reveal style="--d:200ms">“I turned this session into a game. You run the team.”</p>
+      </div>
+      <div data-reveal style="--d:280ms">
+        <div id="ai-hq" class="hq-mount">
+          <noscript><p class="narrator">The game needs JavaScript to run.</p></noscript>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 7 · THE QUESTION I LEFT WITH ===== -->
+  <section class="ep02-question">
+    <div class="question-inner">
+      <span class="mono question-kicker" data-reveal>The question I left with</span>
+      <p class="question-quote" data-reveal style="--d:120ms">Can AI recognise originality, or does it reward what has worked before?</p>
+      <p class="ep02-body muted" data-reveal style="--d:220ms">In class, the AI gave creative work a score, like a jury from BBH, Ogilvy and McCann would. But it scores by learning from trends and campaigns that already worked. If an idea breaks those patterns, could it be marked down for being different?</p>
+      <p class="question-takeaway" data-reveal style="--d:320ms">AI can judge creative work, but it shouldn’t define what creativity is.</p>
+    </div>
+  </section>
+
+  <!-- ===== 8 · WHAT I TOOK HOME ===== -->
+  <section class="ep02-lessons" id="notes">
+    <div class="wrap ep02-col">
+      <div class="rule-row mono">
+        <span data-reveal>The recap · My notes</span><span class="muted" data-reveal>4 lessons</span>
+      </div>
+      <h2 class="ep02-h2" data-reveal>What I took <span class="it is-acc">home.</span></h2>
+      <ul class="lesson-grid">
+        <li class="lesson" data-reveal><span class="lesson-i" aria-hidden="true">→</span><span class="lesson-t">Think in workflows, not single prompts.</span></li>
+        <li class="lesson" data-reveal><span class="lesson-i" aria-hidden="true">▤</span><span class="lesson-t">Give AI context through documents and clear instructions.</span></li>
+        <li class="lesson" data-reveal><span class="lesson-i" aria-hidden="true">◎</span><span class="lesson-t">Use fresh eyes to challenge the first output.</span></li>
+        <li class="lesson" data-reveal><span class="lesson-i" aria-hidden="true">●</span><span class="lesson-t">Keep human judgement at the centre of creative decisions.</span></li>
+      </ul>
+      <div class="tools" data-reveal>
+        <span class="mono muted">Tools mentioned</span>
+        <span class="tool">Claude Projects</span><span class="tool">Higgsfield Cinema Studio</span><span class="tool">ChatGPT</span><span class="tool">SOMIN</span><span class="tool">n8n</span><span class="tool">Relevance AI</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 9 · ONE LAST THOUGHT + MY ANSWER ===== -->
+  <section class="ep02-last">
+    <div class="wrap last-inner">
+      <div class="last-top">
+        <span class="mono muted" data-reveal>One last thought</span>
+        <p class="last-lede" data-reveal style="--d:100ms">The opportunity isn’t just to make AI do more work. It’s to rethink how we work with it.</p>
+        <p class="last-ask" data-reveal style="--d:200ms">What would <span class="it is-acc">your</span> virtual team look like?</p>
+      </div>
+      <div class="answer-card" data-reveal style="--d:260ms">
+        <div class="ep02-frame" style="aspect-ratio:1600/1040">
+          <img src="assets/my-virtual-team.jpg" alt="My virtual team in a Claude Project" width="1600" height="1040" loading="lazy" style="object-position:left top">
+        </div>
+        <div class="answer-copy">
+          <span class="mono answer-kicker">Side quest · My answer</span>
+          <h3 class="ep02-h2">I tried it <span class="it">myself.</span></h3>
+          <p class="ep02-body">I tried it myself the same week. For Prof. Prashant’s consumer market research assignment, I built my own virtual team in a Claude Project: a project manager, research, social intelligence, consumer psychology, market intelligence, AI visibility, category creation, strategy and design. Each chat had one job and passed its work to the next.</p>
+        </div>
+      </div>
+      <figure class="ep02-figure group-photo" data-reveal>
+        <div class="ep02-frame" style="aspect-ratio:16/9">
+          <img src="assets/ep02-group-photo.jpg" alt="Our class with Nick Goh" width="1600" height="1200" loading="lazy" style="object-position:50% 62%">
+        </div>
+        <figcaption class="mono muted">Our class with Nick Goh, 30 October 2026</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== 10 · NEXT EPISODE: when E03 exists, change the <div class="next-card"> to an <a href="episode-03-....html"> ===== -->
+  <section class="next">
+    <div class="wrap">
+      <p class="narrator next-line" data-reveal>“That is the end of episode two. The next one is still being written.”</p>
+      <div class="next-card" data-reveal style="--d:120ms">
+        <div class="next-thumb">
+          <span class="next-soon">Coming soon</span>
+          <span class="next-num" aria-hidden="true">03</span>
+        </div>
+        <div class="next-info">
+          <span class="mono next-kicker">Next episode · S01 · E03</span>
+          <span class="next-title">To be <span class="it">announced</span></span>
+          <div class="next-track"><div class="next-fill"></div></div>
+        </div>
+      </div>
+      <nav class="foot-links mono">
+        <a class="hover-acc" href="index.html#episodes">← Back to all episodes</a>
+        <a class="hover-acc" href="#top">Back to top ↑</a>
+      </nav>
+    </div>
+  </section>
+
+</main>
+
+<script src="js/episode.js" defer></script>
+<script src="js/team-graphic.js" defer></script>
+<script src="js/episode-02.js" defer></script>
+<script src="js/ai-hq-game.js" defer></script>
+</body>
+</html>
