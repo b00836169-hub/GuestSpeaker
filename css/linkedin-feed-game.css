@@ -1,0 +1,161 @@
+/* ==========================================================
+   "Get Cited": Episode 03 game.
+   A LinkedIn-style feed, built from real DOM elements (not canvas),
+   because the brief for this one is to look like the app itself.
+   Not LinkedIn. A class simulation of its look, for this project.
+   Every rule is scoped under #geo-feed so nothing leaks into the page.
+   ========================================================== */
+
+#geo-feed {
+  font-family: var(--sans);
+  color: #1d2226;
+}
+
+#geo-feed .stage {
+  position: relative; width: 100%; max-width: 420px; margin: 0 auto;
+  height: min(680px, 80vh); border-radius: 16px; overflow: hidden;
+  background: #F4F2EE; isolation: isolate;
+  box-shadow: 0 0 0 1px var(--line), 0 30px 80px -30px rgba(10, 102, 194, .35);
+  touch-action: pan-y; user-select: none; -webkit-user-select: none;
+}
+@media (max-width: 480px) { #geo-feed .stage { max-width: 100%; border-radius: 12px; } }
+
+/* ---------- The feed itself ---------- */
+
+#geo-feed .feed-app {
+  position: absolute; inset: 0; display: flex; flex-direction: column;
+}
+#geo-feed .feed-topbar {
+  flex: none; height: 52px; background: #0A66C2;
+  display: flex; align-items: center; gap: 10px; padding: 0 14px;
+}
+#geo-feed .feed-logo {
+  flex: none; width: 28px; height: 28px; border-radius: 6px;
+  background: #fff; color: #0A66C2; font-weight: 800; font-size: 15px;
+  display: grid; place-items: center; letter-spacing: -.02em;
+}
+#geo-feed .feed-search {
+  flex: 1; background: rgba(255, 255, 255, .18); color: rgba(255, 255, 255, .85);
+  border-radius: 6px; padding: 8px 12px; font-size: 10px; letter-spacing: .06em;
+}
+#geo-feed .feed-nav { flex: none; display: flex; gap: 6px; }
+#geo-feed .feed-nav-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255, 255, 255, .5); }
+
+#geo-feed .feed-body {
+  flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch;
+  padding: 14px; display: flex; flex-direction: column; gap: 12px;
+}
+
+/* Post cards: the drafted/final post and the quiet filler posts around it */
+
+#geo-feed .post-card {
+  background: #fff; border-radius: 10px; padding: 14px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, .08);
+  display: flex; flex-direction: column; gap: 10px;
+}
+#geo-feed .post-card.is-draft { border: 1.5px dashed #0A66C2; }
+#geo-feed .post-head { display: flex; gap: 10px; align-items: center; }
+#geo-feed .post-avatar {
+  flex: none; width: 38px; height: 38px; border-radius: 50%; background: #8b97a3;
+  display: grid; place-items: center; color: #fff; font-weight: 700; font-size: 13px;
+}
+#geo-feed .post-id { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+#geo-feed .post-name { font-weight: 700; font-size: 13px; }
+#geo-feed .post-sub { font-size: 11px; color: #5a6168; }
+#geo-feed .post-headline { font-weight: 700; font-size: 15px; line-height: 1.35; }
+#geo-feed .post-body { font-size: 13px; line-height: 1.55; color: #2b3338; }
+#geo-feed .post-body p { margin: 0 0 6px; }
+#geo-feed .post-body p:last-child { margin-bottom: 0; }
+#geo-feed .post-body ul { margin: 4px 0 0; padding-left: 18px; }
+#geo-feed .post-body li { margin-bottom: 3px; }
+#geo-feed .post-evidence { color: #0A66C2; font-weight: 600; }
+#geo-feed .post-placeholder { font-size: 13px; color: #8b97a3; font-style: italic; }
+#geo-feed .post-meta { font-size: 11px; color: #5a6168; }
+#geo-feed .post-actions { display: flex; border-top: 1px solid #e9e5df; padding-top: 8px; gap: 4px; }
+#geo-feed .post-action { flex: 1; text-align: center; font-size: 11px; font-weight: 600; color: #5a6168; padding: 6px 2px; border-radius: 6px; }
+
+#geo-feed .filler-card { background: #fff; border-radius: 10px; padding: 14px; box-shadow: 0 0 0 1px rgba(0, 0, 0, .06); display: flex; gap: 10px; align-items: center; opacity: .55; }
+#geo-feed .filler-avatar { flex: none; width: 34px; height: 34px; border-radius: 50%; background: #dcdfe1; }
+#geo-feed .filler-lines { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+#geo-feed .filler-line { height: 7px; border-radius: 4px; background: #e4e6e8; }
+#geo-feed .filler-line.w60 { width: 60%; }
+#geo-feed .filler-line.w40 { width: 40%; }
+
+/* ---------- Decision modal ---------- */
+
+#geo-feed .decision {
+  position: absolute; inset: 0; z-index: 5;
+  background: rgba(13, 15, 20, .55);
+  display: grid; place-items: center; padding: 16px;
+}
+#geo-feed .decision[hidden] { display: none !important; }
+#geo-feed .decision-card {
+  width: 100%; max-width: 340px; background: #fff; border-radius: 14px; padding: 20px;
+  display: flex; flex-direction: column; gap: 14px;
+  box-shadow: 0 20px 60px -20px rgba(0, 0, 0, .45);
+  animation: geo-rise .45s var(--ease) both;
+}
+#geo-feed .decision-step { color: #0A66C2; letter-spacing: .1em; }
+#geo-feed .decision-q { margin: 0; font-weight: 800; font-size: 18px; letter-spacing: -.02em; }
+#geo-feed .decision-options { display: flex; flex-direction: column; gap: 10px; }
+#geo-feed .decision-option {
+  text-align: left; border: 1.5px solid #d8dde1; border-radius: 10px; padding: 12px 14px;
+  background: #fff; cursor: pointer; font-family: var(--sans);
+  transition: border-color .15s, background .15s;
+}
+#geo-feed .decision-option:hover, #geo-feed .decision-option:focus-visible { border-color: #0A66C2; background: #f0f6fc; outline: none; }
+#geo-feed .decision-option-label {
+  display: block; font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  color: #8b97a3; margin-bottom: 4px;
+}
+#geo-feed .decision-option-text { font-size: 13px; line-height: 1.45; color: #1d2226; }
+#geo-feed .decision-option ul { margin: 4px 0 0; padding-left: 16px; font-size: 13px; }
+
+@keyframes geo-rise { from { opacity: 0; transform: translateY(14px) scale(.98); } to { opacity: 1; transform: none; } }
+
+/* ---------- Cover / end screens ---------- */
+
+#geo-feed .screen {
+  position: absolute; inset: 0; z-index: 6; overflow-y: auto;
+  padding: clamp(20px, 5vw, 36px); display: grid;
+  background: #F4F2EE;
+}
+#geo-feed .screen[hidden] { display: none !important; }
+#geo-feed .cover, #geo-feed .end {
+  align-self: center; margin: 0 auto; width: 100%; max-width: 360px;
+  display: grid; gap: 14px; text-align: left;
+  animation: geo-rise .6s var(--ease) both;
+}
+#geo-feed .eyebrow { font-size: 11px; color: #5a6168; display: flex; gap: 10px; align-items: center; }
+#geo-feed .eyebrow i { width: 24px; height: 1px; background: #0A66C2; display: inline-block; }
+#geo-feed .logo { margin: 0; font-weight: 800; font-size: clamp(34px, 8vw, 52px); line-height: .95; letter-spacing: -.03em; color: #1d2226; }
+#geo-feed .logo .it { font-family: var(--serif); font-style: italic; font-weight: 400; color: #0A66C2; }
+#geo-feed .lede { margin: 0; color: #444b50; font-size: 14px; line-height: 1.5; max-width: 38ch; }
+#geo-feed .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+#geo-feed .btn {
+  display: inline-flex; align-items: center; gap: 8px; border: 0; border-radius: 999px; cursor: pointer;
+  background: #0A66C2; color: #fff; font-family: var(--sans); font-weight: 600; font-size: 15px;
+  padding: 12px 20px 12px 16px; transition: background .2s;
+}
+#geo-feed .btn:hover { background: #004182; }
+#geo-feed .btn.ghost { background: transparent; color: #1d2226; box-shadow: inset 0 0 0 1.5px #d8dde1; }
+#geo-feed .btn.ghost:hover { background: #ebebeb; }
+#geo-feed .tri { width: 0; height: 0; border-left: 9px solid currentColor; border-top: 5px solid transparent; border-bottom: 5px solid transparent; }
+#geo-feed .stat { font-size: 11px; color: #5a6168; font-family: var(--mono); }
+#geo-feed .geo-disclaimer { font-size: 10px; color: #8b97a3; letter-spacing: .03em; margin: 0; }
+
+/* AI overview panel on the end screen */
+
+#geo-feed .ai-panel { border: 1px solid #d8dde1; border-radius: 12px; padding: 14px; background: #fff; display: flex; flex-direction: column; gap: 8px; }
+#geo-feed .ai-panel-label { font-size: 10px; font-weight: 700; letter-spacing: .1em; color: #0A66C2; text-transform: uppercase; }
+#geo-feed .ai-panel-text { font-size: 13px; line-height: 1.5; color: #2b3338; margin: 0; }
+#geo-feed .ai-panel-source { font-size: 11px; color: #5a6168; border-top: 1px dashed #d8dde1; padding-top: 8px; margin: 0; }
+#geo-feed .score-row { display: flex; align-items: center; gap: 8px; }
+#geo-feed .score-meter { display: flex; gap: 4px; }
+#geo-feed .score-dot { width: 9px; height: 9px; border-radius: 50%; background: #d8dde1; }
+#geo-feed .score-dot.is-on { background: #0A66C2; }
+#geo-feed .score-label { font-size: 11px; color: #5a6168; font-family: var(--mono); }
+
+@media (prefers-reduced-motion: reduce) {
+  #geo-feed .decision-card, #geo-feed .cover, #geo-feed .end { animation: none; }
+}

@@ -11,7 +11,15 @@
    timeline. Set the length with style="--hero-len:500vh". */
 
 .hero { position: relative; height: var(--hero-len, 500vh); }
-.hero-stage { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; }
+.hero-stage {
+  position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden;
+  /* The framed photo only covers part of this area until the user scrolls
+     (clip-path grows it to full screen). Behind that frame used to be the
+     page background, which was dark under Midnight Reel so the light hero
+     title read fine by coincidence. Cream-ink's page background is light,
+     so pin this stage's own backdrop dark on every palette. */
+  background: #15140f;
+}
 
 .hero-title {
   position: absolute; left: clamp(16px, 4vw, 48px); right: clamp(16px, 4vw, 48px); top: 76px;
