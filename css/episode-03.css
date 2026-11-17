@@ -143,6 +143,10 @@
 }
 .tried-copy { margin: 0; }
 
+/* ---------- The pull quote: shrunk to fit two lines on this page ---------- */
+
+.pull p { max-width: 78ch; font-size: clamp(17px, 1.6vw, 23px); line-height: 1.25; }
+
 /* ---------- The spine: a connecting thread down the margin ----------
    Fixed to the viewport, filled to scroll progress, with a dot per
    section. Desktop only: below 1100px there's no spare margin to put
