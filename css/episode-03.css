@@ -1,6 +1,16 @@
 /* ==========================================================
    Episode 03 page: extra components on top of episode.css.
+   This file only loads on this page, so overrides here never touch
+   Episode 01 or 02.
    ========================================================== */
+
+/* ---------- Type overrides for this page ----------
+   "SEO to GEO" is short, all caps and no descenders, so at the shared
+   .ep-title size it reads heavier than "The Virtual Team" does at the
+   same size. Sized down here rather than in the shared class. */
+
+.ep-title { font-size: clamp(56px, 9vw, 150px); }
+.sticker { font-size: 12px; padding: 7px 13px; }
 
 /* ---------- Meet the guest (same pattern as Episode 02) ---------- */
 
@@ -47,10 +57,10 @@
 }
 .big-idea .stack { align-items: center; gap: clamp(20px, 3vw, 32px); }
 .big-idea-kicker { color: rgba(243, 238, 227, .7); }
-.big-idea-title { max-width: 20ch; }
+.big-idea-title { max-width: 26ch; font-size: clamp(38px, 5.5vw, 84px); }
 .big-idea-title .it { color: var(--acc); }
 .big-idea-quote { max-width: 28ch; color: rgba(243, 238, 227, .85); font-size: clamp(20px, 2.2vw, 28px); }
-.big-idea-body { max-width: 58ch; color: rgba(243, 238, 227, .85); }
+.big-idea-body { max-width: 100%; color: rgba(243, 238, 227, .85); }
 
 /* ---------- How AI reads you: two funnels side by side ---------- */
 
