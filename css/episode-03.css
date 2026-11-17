@@ -28,12 +28,6 @@
   border-radius: var(--photo-radius);
   box-sizing: border-box; border: 10px solid var(--card); box-shadow: 0 0 0 1px var(--line);
 }
-.meet-class {
-  width: 100%; max-width: 280px; aspect-ratio: 4 / 5; object-fit: cover;
-  border-radius: var(--photo-radius);
-  box-sizing: border-box; border: 10px solid var(--card); box-shadow: 0 0 0 1px var(--line);
-}
-.meet-caption { max-width: 280px; }
 .meet-copy { display: flex; flex-direction: column; gap: 16px; }
 .meet-copy h3 { margin: 0; font-weight: 800; font-size: clamp(28px, 3vw, 40px); letter-spacing: -.03em; }
 
@@ -148,3 +142,64 @@
   box-sizing: border-box; border: 1px solid var(--line);
 }
 .tried-copy { margin: 0; }
+
+/* ---------- The spine: a connecting thread down the margin ----------
+   Fixed to the viewport, filled to scroll progress, with a dot per
+   section. Desktop only: below 1100px there's no spare margin to put
+   it in, and the page is short enough on a phone not to need it. */
+
+.spine {
+  position: fixed; left: 28px; top: 100px; bottom: 36px; width: 2px;
+  z-index: 25; pointer-events: none;
+}
+.spine-track { position: absolute; inset: 0; background: rgba(90, 86, 80, .25); border-radius: 2px; }
+.spine-fill {
+  position: absolute; left: 0; top: 0; width: 100%; height: 0%;
+  background: var(--acc); border-radius: 2px;
+}
+.spine-dots { position: absolute; inset: 0; }
+.spine-dot {
+  position: absolute; left: 50%; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--card); border: 1.5px solid rgba(90, 86, 80, .4);
+  transform: translate(-50%, -50%);
+  transition: background .3s var(--ease), border-color .3s var(--ease), transform .3s var(--ease);
+}
+.spine-dot.is-on { background: var(--acc); border-color: var(--acc); transform: translate(-50%, -50%) scale(1.35); }
+
+@media (max-width: 1100px) {
+  .spine { display: none; }
+}
+
+/* ---------- Gradient seams: soften the hard edge into the black band ---------- */
+
+.big-idea { position: relative; }
+.big-idea::before, .big-idea::after {
+  content: ""; position: absolute; left: 0; right: 0; height: 56px; pointer-events: none;
+}
+.big-idea::before { top: -1px; transform: translateY(-100%); background: linear-gradient(to bottom, var(--bg), var(--band)); }
+.big-idea::after { bottom: -1px; transform: translateY(100%); background: linear-gradient(to top, var(--bg), var(--band)); }
+
+/* ---------- Animated vectors: the flow arrows draw themselves in ---------- */
+
+.flow-arrow { height: 0; opacity: 0; transition: height .5s var(--ease) .1s, opacity .4s var(--ease) .1s; }
+.flow-arrow::after { opacity: 0; transition: opacity .3s var(--ease) .5s; }
+.flow-compare.is-in .flow-arrow { height: 18px; opacity: 1; }
+.flow-compare.is-in .flow-arrow::after { opacity: 1; }
+
+/* ---------- Animated vectors: the signal bars power on ---------- */
+
+.signal-bars i { transform: scaleY(0); transform-origin: bottom; transition: transform .5s var(--ease); }
+.signal-bars i:nth-child(1) { transition-delay: .05s; }
+.signal-bars i:nth-child(2) { transition-delay: .12s; }
+.signal-bars i:nth-child(3) { transition-delay: .19s; }
+.signal-bars i:nth-child(4) { transition-delay: .26s; }
+.signal-row.is-in .signal-bars i { transform: scaleY(1); }
+
+/* ---------- Count-up numbers: fixed width so the layout doesn't jump ---------- */
+
+.countup { font-variant-numeric: tabular-nums; }
+
+@media (prefers-reduced-motion: reduce) {
+  .spine-fill, .spine-dot { transition: none; }
+  .flow-arrow, .flow-arrow::after, .signal-bars i { transition: none; }
+}

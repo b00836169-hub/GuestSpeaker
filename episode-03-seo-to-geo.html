@@ -22,6 +22,16 @@
   <div class="progress"><div class="progress-bar" data-progress></div></div>
 </header>
 
+<!-- A thread down the margin that fills as you scroll, with a dot per
+     section. The idea: show that every part of this episode is one
+     connected line, not separate blocks. Desktop only, hidden on mobile
+     where there's no margin to put it in. -->
+<div class="spine" id="ep03-spine" aria-hidden="true">
+  <div class="spine-track"></div>
+  <div class="spine-fill" id="spine-fill"></div>
+  <div class="spine-dots" id="spine-dots"></div>
+</div>
+
 <main>
 
   <!-- ===== OPENER ===== -->
@@ -60,8 +70,6 @@
       <div class="meet-grid">
         <div class="meet-photos" data-reveal>
           <img class="meet-portrait" src="assets/cindy-leong.png" alt="Cindy Leong" loading="lazy">
-          <img class="meet-class" src="assets/ep03-class-photo.jpg" alt="Cindy Leong presenting to the class" loading="lazy">
-          <p class="meet-caption mono muted">Cindy presenting The LinkedIn Ecosystem, 13 November 2026</p>
         </div>
         <div class="meet-copy" data-reveal style="--d:120ms">
           <h3>Cindy Leong</h3>
@@ -73,7 +81,7 @@
             </div>
             <div class="meet-stat">
               <span class="meet-stat-label">REACH</span>
-              <p>LinkedIn connects 1.3 billion members and 71 million companies worldwide</p>
+              <p>LinkedIn connects <span class="countup" data-countup data-to="1.3">0</span> billion members and <span class="countup" data-countup data-to="71">0</span> million companies worldwide</p>
             </div>
             <div class="meet-stat">
               <span class="meet-stat-label">FOCUS</span>
@@ -155,29 +163,29 @@
         <span data-reveal>What AI looks for</span><span class="muted" data-reveal>Four signals, one trust score</span>
       </div>
       <h2 class="h2" data-reveal>Can AI <span class="it">trust</span> you?</h2>
-      <div class="signal-list" data-reveal style="--d:80ms">
-        <div class="signal-row">
+      <div class="signal-list">
+        <div class="signal-row" data-reveal>
           <div class="signal-mark"><div class="signal-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></div><span class="signal-letter">E</span></div>
           <div class="signal-copy">
             <h4>Experience</h4>
             <p>First-hand knowledge, real-world usage, testimonials and practical examples.</p>
           </div>
         </div>
-        <div class="signal-row">
+        <div class="signal-row" data-reveal style="--d:90ms">
           <div class="signal-mark"><div class="signal-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></div><span class="signal-letter">E</span></div>
           <div class="signal-copy">
             <h4>Expertise</h4>
             <p>Content made by people with real professional knowledge and credibility.</p>
           </div>
         </div>
-        <div class="signal-row">
+        <div class="signal-row" data-reveal style="--d:180ms">
           <div class="signal-mark"><div class="signal-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></div><span class="signal-letter">A</span></div>
           <div class="signal-copy">
             <h4>Authoritativeness</h4>
             <p>Recognised sources, company publications, respected experts and outside references.</p>
           </div>
         </div>
-        <div class="signal-row">
+        <div class="signal-row" data-reveal style="--d:270ms">
           <div class="signal-mark"><div class="signal-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></div><span class="signal-letter">T</span></div>
           <div class="signal-copy">
             <h4>Trustworthiness</h4>
@@ -311,7 +319,7 @@
           </div>
           <div class="file-tile" data-reveal style="--d:360ms">
             <span class="file-name">The 95:5 rule</span>
-            <span class="file-role">95% of buyers aren't in-market yet. Build trust before they are.</span>
+            <span class="file-role"><span class="countup" data-countup data-to="95">0</span>% of buyers aren't in-market yet. Build trust before they are.</span>
           </div>
         </div>
       </div>
@@ -354,6 +362,7 @@
 </main>
 
 <script src="js/episode.js" defer></script>
+<script src="js/episode-03-motion.js" defer></script>
 <script src="js/episode-03-game.js" defer></script>
 </body>
 </html>

@@ -145,10 +145,12 @@
         </div>
         <div class="post-headline">${picks.headline.text}</div>
         <div class="post-body">${picks.body.html}<p class="post-evidence">${picks.evidence.text}</p></div>
-        <p class="post-meta">182 reactions · 24 comments</p>
+        <p class="post-meta"><span class="countup" data-to="182">0</span> reactions · 24 comments</p>
         <div class="post-actions"><span class="post-action">Like</span><span class="post-action">Comment</span><span class="post-action">Repost</span><span class="post-action">Send</span></div>
       `;
     }
+    const reactionsEl = draft ? draft.querySelector('.post-meta .countup') : null;
+    if (reactionsEl && window.ep03CountUp) window.ep03CountUp(reactionsEl);
     setTimeout(showEnd, 900);
   }
 
